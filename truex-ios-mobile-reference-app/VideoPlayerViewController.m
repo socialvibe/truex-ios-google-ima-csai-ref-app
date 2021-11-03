@@ -9,10 +9,18 @@
 #import "VideoPlayerViewController.h"
 #import "WebViewViewController.h"
 #import <TruexAdRenderer/TruexAdRenderer.h>
+#import <GoogleInteractiveMediaAds/GoogleInteractiveMediaAds.h>
 
-@interface VideoPlayerViewController ()
+NSString* const kContentURLString = @"https://ctv.truex.com/assets/reference-app-stream-no-ads-720p.mp4";
+NSString *const kAdTagURLString = @"https://stash.truex.com/ios/reference_app/ima-vmap-playlist.xml";
+
+
+@interface VideoPlayerViewController () <IMAAdsLoaderDelegate, IMAAdsManagerDelegate>
 
 @property TruexAdRenderer* activeAdRenderer;
+@property(nonatomic) IMAAVPlayerContentPlayhead *contentPlayhead;
+@property(nonatomic) IMAAdsLoader *adsLoader;
+@property(nonatomic) IMAAdsManager *adsManager;
 
 // internal state for the fake ad manager
 @property NSMutableDictionary* videoMap;
@@ -39,10 +47,14 @@ BOOL _snappingBack = NO;
                                            selector:@selector(resume)
                                                name:UIApplicationDidBecomeActiveNotification
                                              object:nil];
+    self.adsLoader = [[IMAAdsLoader alloc] init];
+    self.adsLoader.delegate = self;
+    [self setupStream];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [self fetchVmapFromServer];
+    [self.player play];
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
@@ -75,6 +87,47 @@ BOOL _snappingBack = NO;
     }
     self.activeAdRenderer = nil;
 }
+
+#pragma mark - IMAAdsLoaderDelegate
+
+- (void)adsLoader:(IMAAdsLoader *)loader adsLoadedWithData:(IMAAdsLoadedData *)adsLoadedData {
+    // Initialize and listen to the ads manager loaded for this request.
+    self.adsManager = adsLoadedData.adsManager;
+    self.adsManager.delegate = self;
+    [self.adsManager initializeWithAdsRenderingSettings:nil];
+}
+
+- (void)adsLoader:(IMAAdsLoader *)loader failedWithErrorData:(IMAAdLoadingErrorData *)adErrorData {
+    // Fall back to playing content.
+    NSLog(@"Error loading ads: %@", adErrorData.adError.message);
+    [self.player play];
+}
+
+#pragma mark - IMAAdsManagerDelegate
+
+- (void)adsManager:(IMAAdsManager *)adsManager didReceiveAdEvent:(IMAAdEvent *)event {
+    // Play each ad once it has loaded.
+    if (event.type == kIMAAdEvent_LOADED) {
+        [adsManager start];
+    }
+}
+
+- (void)adsManager:(IMAAdsManager *)adsManager didReceiveAdError:(IMAAdError *)error {
+    // Fall back to playing content.
+    NSLog(@"AdsManager error: %@", error.message);
+    [self.player play];
+}
+
+- (void)adsManagerDidRequestContentPause:(IMAAdsManager *)adsManager {
+    // Pause the content for the SDK to play ads.
+    [self.player pause];
+}
+
+- (void)adsManagerDidRequestContentResume:(IMAAdsManager *)adsManager {
+    // Resume the content since the SDK is done playing ads (at least for now).
+    [self.player play];
+}
+
 
 // MARK: - Fake Ad Manager's Video Life Cycle Callbacks
 - (void)videoStarted {
@@ -237,137 +290,23 @@ BOOL _snappingBack = NO;
 
 // Simulating video server call
 - (void)fetchVmapFromServer {
-    if (self.videoMap != nil) {
-        return;
-    }
-    _inAdBreak = NO;
-    _adBreakIndex = 0;
-    NSUUID *uuid = [NSUUID UUID];
-    if (self.macros == nil) {
-        self.macros = [@{} mutableCopy];
-    }
-    [self.macros setValue:[uuid UUIDString] forKey:@"stream_id"];
-    
-    // Fetch the xml from server
-    NSXMLParser *xmlparser = [[NSXMLParser alloc] initWithContentsOfURL:[[NSURL alloc] initWithString:@"https://stash.truex.com/ios/reference_app/vmap.xml"]];
-    
-    // Or use the hardcoded copy
-    // NSData* vmapData = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"vmap" ofType:@"xml"]];
-    // NSXMLParser *xmlparser = [[NSXMLParser alloc] initWithData:vmapData];
-    
-    [xmlparser setDelegate:self];
-    BOOL success = [xmlparser parse];
-    if (success) {
-        [self setupStream];
-        [self.player play];
-        
-        // The Boundary Time Observer doesn't like 0s, thus I am firing these event manually. Your video/ad framework should already handle these
-        [self videoStarted];
-        [self helperStartAdBreak];
-    } else {
-        [self alertWithTitle:@"Error" message:@"Failed to fetch vmap." completion:nil];
-    }
+    IMAAdDisplayContainer *adDisplayContainer = [[IMAAdDisplayContainer alloc] initWithAdContainer:self.view
+                                                                                    viewController:self];
+    IMAAdsRequest *request = [[IMAAdsRequest alloc] initWithAdTagUrl:kAdTagURLString
+                                                  adDisplayContainer:adDisplayContainer
+                                                     contentPlayhead:self.contentPlayhead
+                                                          userContext:nil];
+    [self.adsLoader requestAdsWithRequest:request];
 }
 
 // Simulating your existing ad framework
 - (void)setupStream {
-    NSURL* url = [NSURL URLWithString:[self.videoMap objectForKey:@"url"]];
+    NSURL* url = [NSURL URLWithString:kContentURLString];
     AVAsset* asset = [AVAsset assetWithURL:url];
     NSArray* assetKeys = @[ @"playable" ];
     AVPlayerItem* playerItem = [AVPlayerItem playerItemWithAsset:asset automaticallyLoadedAssetKeys:assetKeys];
-    __weak typeof(self) weakSelf = self;
     self.player = [AVPlayer playerWithPlayerItem:playerItem];
-    
-    // Set Up Video Events
-    // Ad Break Observer
-    NSMutableArray* adBreakStartTimes = [@[] mutableCopy];
-    NSMutableArray* adBreakEndTimes = [@[] mutableCopy];
-    for (NSMutableDictionary* adbreak in [self.videoMap objectForKey:@"adbreaks"]) {
-        int timeOffset = [[adbreak valueForKey:@"timeOffset"] intValue];
-        int duration = [[adbreak valueForKey:@"duration"] intValue];
-        
-        CMTime adbreakStart = CMTimeMake(timeOffset, 1);
-        CMTime adbreakEnd = CMTimeMake(timeOffset + duration, 1);
-        [adBreakStartTimes addObject:[NSValue valueWithCMTime:adbreakStart]];
-        [adBreakEndTimes addObject:[NSValue valueWithCMTime:adbreakEnd]];
-    }
-    // Ad Break Start Event
-    [self.player addBoundaryTimeObserverForTimes:adBreakStartTimes
-                                           queue:dispatch_get_main_queue()
-                                      usingBlock:^{
-                                          [weakSelf helperStartAdBreak];
-                                      }];
-    
-    // Ad Break End Event
-    [self.player addBoundaryTimeObserverForTimes:adBreakEndTimes
-                                           queue:dispatch_get_main_queue()
-                                      usingBlock:^{
-                                          [weakSelf helperEndAdBreak];
-                                      }];
-    
-    // Video Start Event
-    [self.player addBoundaryTimeObserverForTimes:@[@0]
-                                           queue:dispatch_get_main_queue()
-                                      usingBlock:^{
-                                          [weakSelf videoStarted];
-                                      }];
-    // Video End Event
-    CMTime assetDuration = asset.duration;
-    [self.player addBoundaryTimeObserverForTimes:@[[NSValue valueWithCMTime:assetDuration]]
-                                           queue:dispatch_get_main_queue()
-                                      usingBlock:^{
-                                          // Use weak reference to self
-                                          [weakSelf videoEnded];
-                                      }];
-    
-    [self.player addPeriodicTimeObserverForInterval:CMTimeMakeWithSeconds(0.5, NSEC_PER_SEC)
-                                              queue:dispatch_get_main_queue()
-                                         usingBlock:^(CMTime time) {
-        if (weakSelf.player.rate != 0) {
-            NSDictionary* currentAdBreak = [weakSelf currentAdBreak];
-            if (currentAdBreak != nil) {
-                if (!_inAdBreak) {
-                    _snappingBack = YES;
-                    // Snap Video Position back to the beginning of Ad Break
-                    NSDictionary* currentAdBreak = [weakSelf currentAdBreak];
-                    int timeOffset = [[currentAdBreak valueForKey:@"timeOffset"] intValue];
-                    [weakSelf.player seekToTime:CMTimeMake(timeOffset, 1) completionHandler:^(BOOL finished) {
-                        if (finished) {
-                            // Boundary Time Observer won't fire for time 0, thus, hardcoding here
-                            // Your ad framework would had handled this
-                            [weakSelf helperStartAdBreak];
-                        }
-                    }];
-                } else {
-                    _snappingBack = NO;
-                }
-            } else {
-                if (_inAdBreak) {
-                    // Add a flag to avoid trigger adbreak end when we snap back
-                    if (!_snappingBack){
-                        // Help fires adBreakEnded event if somehow it was missed
-                        [weakSelf helperEndAdBreak];
-                    }
-                } else {
-                    // snap back to the last ad break if it wasn't played
-                    int currentAdBreakIndex = [weakSelf currentAdBreakIndex];
-                    if (_adBreakIndex != currentAdBreakIndex) {
-                        _snappingBack = YES;
-                        NSDictionary* currentAdBreak = [weakSelf adBreakAtIndex:currentAdBreakIndex];
-                        _resumeTime = CMTimeGetSeconds(weakSelf.player.currentTime);
-                        int timeOffset = [[currentAdBreak valueForKey:@"timeOffset"] intValue];
-                        [weakSelf.player seekToTime:CMTimeMake(timeOffset, 1) completionHandler:^(BOOL finished) {
-                            if (finished) {
-                                // Boundary Time Observer won't fire for time 0, thus, hardcoding here
-                                // Your ad framework would had handled this
-                                [weakSelf helperStartAdBreak];
-                            }
-                        }];
-                    }
-                }
-            }
-        }
-    }];
+    self.contentPlayhead = [[IMAAVPlayerContentPlayhead alloc] initWithAVPlayer:self.player];
 }
 
 - (NSDictionary*)currentAdBreak {

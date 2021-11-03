@@ -1,16 +1,21 @@
 PODS:
+  - GoogleAds-IMA-iOS-SDK (3.14.3)
   - TruexAdRenderer-iOS (3.2.4)
 
 DEPENDENCIES:
+  - GoogleAds-IMA-iOS-SDK (~> 3.14)
   - TruexAdRenderer-iOS (= 3.2.4)
 
 SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - GoogleAds-IMA-iOS-SDK
   https://github.com/socialvibe/cocoapod-specs-dev.git:
     - TruexAdRenderer-iOS
 
 SPEC CHECKSUMS:
+  GoogleAds-IMA-iOS-SDK: 2a9b7b14bda4993306f05287f952dce41b5be4ad
   TruexAdRenderer-iOS: 950093eda8fd1854eff779f70825fdc7ccb0cd09
 
-PODFILE CHECKSUM: 53e845072b89a5971a68eb9b5773574dd5e50e73
+PODFILE CHECKSUM: f71e3357677aa84e8bff08bfdc3d8a8a92a4ab3e
 
-COCOAPODS: 1.9.3
+COCOAPODS: 1.10.1

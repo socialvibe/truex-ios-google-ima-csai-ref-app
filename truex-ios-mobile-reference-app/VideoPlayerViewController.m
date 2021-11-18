@@ -29,6 +29,7 @@ NSString *const kAdTagURLString = @"https://stash.truex.com/ios/reference_app/im
 @end
 
 // internal state for the fake ad manager
+BOOL _truexAdActive = NO;
 BOOL _inAdBreak = NO;
 int _adBreakIndex = 0;
 int _resumeTime = -1;
@@ -47,7 +48,10 @@ BOOL _snappingBack = NO;
                                            selector:@selector(resume)
                                                name:UIApplicationDidBecomeActiveNotification
                                              object:nil];
-    self.adsLoader = [[IMAAdsLoader alloc] init];
+    IMASettings *adsSettings = [[IMASettings alloc] init];
+    adsSettings.autoPlayAdBreaks = NO;
+    adsSettings.enableDebugMode = YES;
+    self.adsLoader = [[IMAAdsLoader alloc] initWithSettings:adsSettings];
     self.adsLoader.delegate = self;
     [self setupStream];
 }
@@ -95,6 +99,7 @@ BOOL _snappingBack = NO;
     self.adsManager = adsLoadedData.adsManager;
     self.adsManager.delegate = self;
     [self.adsManager initializeWithAdsRenderingSettings:nil];
+    [self.adsManager pause];
 }
 
 - (void)adsLoader:(IMAAdsLoader *)loader failedWithErrorData:(IMAAdLoadingErrorData *)adErrorData {
@@ -107,8 +112,30 @@ BOOL _snappingBack = NO;
 
 - (void)adsManager:(IMAAdsManager *)adsManager didReceiveAdEvent:(IMAAdEvent *)event {
     // Play each ad once it has loaded.
+    NSLog(@"AD EVENT FROM: %@", event.ad.adTitle);
     if (event.type == kIMAAdEvent_LOADED) {
-        [adsManager start];
+        if (!_truexAdActive) {
+            [adsManager start];
+        }
+        if ([event.ad.adSystem isEqualToString:@"trueX"]) {
+            NSError *error;
+            NSData *jsonData = [event.ad.traffickingParameters dataUsingEncoding:NSUTF8StringEncoding];
+            NSDictionary* adParameters = [NSJSONSerialization JSONObjectWithData:jsonData
+                                                                         options:0
+                                                                           error:&error];
+            if (!error) {
+                _truexAdActive = YES;
+                [self.player pause];
+                [adsManager pause];
+                NSString* slotType = (CMTimeGetSeconds(self.player.currentTime) == 0) ? @"preroll" : @"midroll";
+                self.activeAdRenderer = [[TruexAdRenderer alloc] initWithUrl:@"https://media.truex.com/placeholder.js"
+                                                                adParameters:adParameters
+                                                                    slotType:slotType];
+                self.activeAdRenderer.delegate = self;
+                [self.activeAdRenderer start:self.view];
+            }
+            
+        }
     }
 }
 
@@ -190,7 +217,9 @@ BOOL _snappingBack = NO;
     // true[X] - User has finished the true[X] engagement, resume the video stream
     NSLog(@"truex: onAdCompleted: %ld", (long)timeSpent);
     [self resetActiveAdRenderer];
+    [self.adsManager skip];
     [self.player play];
+    _truexAdActive = NO;
 }
 
 // [4]
@@ -198,7 +227,9 @@ BOOL _snappingBack = NO;
     // true[X] - TruexAdRenderer encountered an error presenting the ad, resume with standard ads
     NSLog(@"truex: onAdError: %@", errorMessage);
     [self resetActiveAdRenderer];
+    [self.adsManager skip];
     [self.player play];
+    _truexAdActive = NO;
 }
 
 // [4]
@@ -206,7 +237,9 @@ BOOL _snappingBack = NO;
     // true[X] - TruexAdRenderer has no ads ready to present, resume with standard ads
     NSLog(@"truex: onNoAdsAvailable");
     [self resetActiveAdRenderer];
+    [self.adsManager skip];
     [self.player play];
+    _truexAdActive = NO;
 }
 
 // [3] - Respond to onAdFreePod
@@ -363,9 +396,7 @@ BOOL _snappingBack = NO;
 }
 
 - (void)seekOverCurrentAdBreak {
-    NSDictionary* currentAdBreak = [self currentAdBreak];
-    int duration = [[currentAdBreak valueForKey:@"duration"] intValue];
-    [self.player seekToTime:CMTimeAdd(self.player.currentTime, CMTimeMake(duration, 1))];
+    [self.adsManager discardAdBreak];
 }
 
 - (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict

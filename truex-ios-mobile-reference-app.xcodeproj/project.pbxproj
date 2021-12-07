@@ -36,7 +36,6 @@
 		2706A2CA26AA3FB800395986 /* WebViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2706A2C826AA3FB800395986 /* WebViewViewController.m */; };
 		2706A2CB26AA3FB800395986 /* WebViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2706A2C826AA3FB800395986 /* WebViewViewController.m */; };
 		2751AAF32702396100575375 /* vast_solo.xml in Resources */ = {isa = PBXBuildFile; fileRef = 2751AAF22702396100575375 /* vast_solo.xml */; };
-		2751AAF62702491000575375 /* UnlockSoloViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2751AAF52702491000575375 /* UnlockSoloViewController.m */; };
 		A582D401C3B42AB7C4E7922D /* libPods-truex-ios-mobile-reference-appTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B45F9139C5E350B21405FA73 /* libPods-truex-ios-mobile-reference-appTests.a */; };
 		B97ED585CD166C0B265F4CED /* libPods-truex-ios-mobile-reference-app.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D2677E3DDC427F9EC3D0719D /* libPods-truex-ios-mobile-reference-app.a */; };
 /* End PBXBuildFile section */
@@ -86,8 +85,6 @@
 		2706A2C726AA3FB800395986 /* WebViewViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebViewViewController.h; sourceTree = "<group>"; };
 		2706A2C826AA3FB800395986 /* WebViewViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebViewViewController.m; sourceTree = "<group>"; };
 		2751AAF22702396100575375 /* vast_solo.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = vast_solo.xml; sourceTree = "<group>"; };
-		2751AAF42702491000575375 /* UnlockSoloViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UnlockSoloViewController.h; sourceTree = "<group>"; };
-		2751AAF52702491000575375 /* UnlockSoloViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UnlockSoloViewController.m; sourceTree = "<group>"; };
 		5B67EE857EFA5E76C8179347 /* Pods-truex-ios-mobile-reference-appUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-truex-ios-mobile-reference-appUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-truex-ios-mobile-reference-appUITests/Pods-truex-ios-mobile-reference-appUITests.release.xcconfig"; sourceTree = "<group>"; };
 		9D4521AD2B52C275CBAB092F /* libPods-truex-ios-mobile-reference-appUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-truex-ios-mobile-reference-appUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFC82C5B3061796D71D6726B /* Pods-truex-ios-mobile-reference-appUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-truex-ios-mobile-reference-appUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-truex-ios-mobile-reference-appUITests/Pods-truex-ios-mobile-reference-appUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -168,8 +165,6 @@
 				2706A27B26A8A05500395986 /* main.m */,
 				2706A2C726AA3FB800395986 /* WebViewViewController.h */,
 				2706A2C826AA3FB800395986 /* WebViewViewController.m */,
-				2751AAF42702491000575375 /* UnlockSoloViewController.h */,
-				2751AAF52702491000575375 /* UnlockSoloViewController.m */,
 			);
 			path = "truex-ios-mobile-reference-app";
 			sourceTree = "<group>";
@@ -460,7 +455,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2751AAF62702491000575375 /* UnlockSoloViewController.m in Sources */,
 				2706A2C926AA3FB800395986 /* WebViewViewController.m in Sources */,
 				2706A2B526A8B8B600395986 /* VideoPlayerViewController.m in Sources */,
 				2706A27126A8A05300395986 /* ViewController.m in Sources */,

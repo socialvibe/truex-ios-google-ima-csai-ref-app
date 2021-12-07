@@ -42,7 +42,6 @@ BOOL _truexAdActive = NO;
                                              object:nil];
     IMASettings *adsSettings = [[IMASettings alloc] init];
     adsSettings.autoPlayAdBreaks = NO;
-    adsSettings.enableDebugMode = YES;
     self.adsLoader = [[IMAAdsLoader alloc] initWithSettings:adsSettings];
     self.adsLoader.delegate = self;
     [self setupStream];
@@ -103,8 +102,6 @@ BOOL _truexAdActive = NO;
 
 - (void)adsManager:(IMAAdsManager *)adsManager didReceiveAdEvent:(IMAAdEvent *)event {
     // Play each ad once it has loaded.
-    // TODO: remove this, for debugging only
-    NSLog(@"AD EVENT FROM: %@", event.ad.adTitle);
     if (event.type == kIMAAdEvent_LOADED) {
         [self.player pause];
         if (!_truexAdActive) {
@@ -119,13 +116,9 @@ BOOL _truexAdActive = NO;
             if (!error) {
                 _truexAdActive = YES;
                 [adsManager pause];
-                // DEBUG: add a random user id in order to avoid maxing out on ads seen
-                NSMutableDictionary *modifiedAdParams = [adParameters mutableCopy];
-                NSString *userId = [NSUUID UUID].UUIDString;
-                modifiedAdParams[@"vast_config_url"] = [modifiedAdParams[@"vast_config_url"] stringByAppendingString:[NSString stringWithFormat:@"&network_user_id=%@", userId]];
                 NSString* slotType = (CMTimeGetSeconds(self.player.currentTime) == 0) ? @"preroll" : @"midroll";
                 self.activeAdRenderer = [[TruexAdRenderer alloc] initWithUrl:@"https://media.truex.com/placeholder.js"
-                                                                adParameters:modifiedAdParams
+                                                                adParameters:adParameters
                                                                     slotType:slotType];
                 self.activeAdRenderer.delegate = self;
                 [self.activeAdRenderer start:self.view];
@@ -148,17 +141,6 @@ BOOL _truexAdActive = NO;
 - (void)adsManagerDidRequestContentResume:(IMAAdsManager *)adsManager {
     // Resume the content since the SDK is done playing ads (at least for now).
     [self.player play];
-}
-
-
-// MARK: - Fake Ad Manager's Video Life Cycle Callbacks
-- (void)videoStarted {
-    NSLog(@"Ad Manager: Video Started");
-}
-
-- (void)videoEnded {
-    NSLog(@"Ad Manager: Video Ended");
-    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 // MARK: - TRUEX DELEGATE METHODS

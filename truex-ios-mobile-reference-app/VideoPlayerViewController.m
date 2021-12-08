@@ -26,6 +26,7 @@ NSString *const kAdTagURLString = @"https://stash.truex.com/ios/reference_app/im
 
 // internal state for the fake ad manager
 BOOL _truexAdActive = NO;
+BOOL _adFreePodEarned = NO;
 
 @implementation VideoPlayerViewController
 
@@ -154,7 +155,6 @@ BOOL _truexAdActive = NO;
 - (void)truexExitHelper {
     [self resetActiveAdRenderer];
     [self.adsManager skip];
-    [self.player play];
     _truexAdActive = NO;
 }
 
@@ -162,6 +162,13 @@ BOOL _truexAdActive = NO;
     // true[X] - User has finished the true[X] engagement, resume the video stream
     NSLog(@"truex: onAdCompleted: %ld", (long) timeSpent);
     [self truexExitHelper];
+    if (_adFreePodEarned) {
+        [self seekOverCurrentAdBreak];
+        _adFreePodEarned = NO;
+    } else {
+        [self.adsManager resume];
+    }
+    [self.player play];
 }
 
 // [4]
@@ -169,6 +176,7 @@ BOOL _truexAdActive = NO;
     // true[X] - TruexAdRenderer encountered an error presenting the ad, resume with standard ads
     NSLog(@"truex: onAdError: %@", errorMessage);
     [self truexExitHelper];
+    [self.adsManager resume];
 }
 
 // [4]
@@ -176,13 +184,14 @@ BOOL _truexAdActive = NO;
     // true[X] - TruexAdRenderer has no ads ready to present, resume with standard ads
     NSLog(@"truex: onNoAdsAvailable");
     [self truexExitHelper];
+    [self.adsManager resume];
 }
 
 // [3] - Respond to onAdFreePod
 - (void)onAdFreePod {
     // true[X] - User has met engagement requirements, skips past remaining pod ads
     NSLog(@"truex: onAdFreePod");
-    [self seekOverCurrentAdBreak];
+    _adFreePodEarned = YES;
 }
 
 // [5] - Other delegate method

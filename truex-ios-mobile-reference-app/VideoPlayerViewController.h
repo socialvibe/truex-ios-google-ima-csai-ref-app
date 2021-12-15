@@ -13,7 +13,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface VideoPlayerViewController : AVPlayerViewController<TruexAdRendererDelegate, NSXMLParserDelegate, SFSafariViewControllerDelegate>
+@interface VideoPlayerViewController : AVPlayerViewController<TruexAdRendererDelegate, SFSafariViewControllerDelegate>
 
 @end
 

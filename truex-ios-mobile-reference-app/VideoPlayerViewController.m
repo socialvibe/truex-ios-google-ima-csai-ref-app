@@ -154,7 +154,6 @@ BOOL _adFreePodEarned = NO;
 // [4] - Respond to renderer terminating events
 - (void)truexExitHelper {
     [self resetActiveAdRenderer];
-    [self.adsManager skip];
     _truexAdActive = NO;
 }
 

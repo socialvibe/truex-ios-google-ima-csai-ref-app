@@ -108,10 +108,8 @@ BOOL _adFreePodEarned = NO;
 
     } else if (event.type == kIMAAdEvent_STARTED) {
         if ([event.ad.adSystem isEqualToString:@"trueX"]) {
-            NSError *error;
-            NSData *jsonData = [event.ad.traffickingParameters dataUsingEncoding:NSUTF8StringEncoding];
-            NSDictionary* adParameters = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:&error];
-            if (!error) {
+            NSString* vastConfigUrl = [event.ad.adDescription stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+            if ([vastConfigUrl length] > 0) {
                 _truexAdActive = YES;
                 [self.player pause];
                 [adsManager pause];
@@ -120,7 +118,7 @@ BOOL _adFreePodEarned = NO;
                 TruexAdOptions options = DefaultOptions();
                 options.userAdvertisingId = [[NSUUID UUID] UUIDString];
 
-                self.activeAdRenderer = [[TruexAdRenderer alloc] initWithAdParameters:adParameters options:options delegate:self];
+                self.activeAdRenderer = [[TruexAdRenderer alloc] initWithVastConfigUrl:vastConfigUrl options:options delegate:self];
                 [self.activeAdRenderer start:self.view];
             }
         }

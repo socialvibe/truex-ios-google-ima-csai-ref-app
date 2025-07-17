@@ -19,9 +19,8 @@
 		2706A2AC26A8A69F00395986 /* true-vision-logo_fhd.png in Resources */ = {isa = PBXBuildFile; fileRef = 2706A2AB26A8A69E00395986 /* true-vision-logo_fhd.png */; };
 		2706A2B026A8AC9D00395986 /* play_button_focused_fhd.png in Resources */ = {isa = PBXBuildFile; fileRef = 2706A2AF26A8AC9D00395986 /* play_button_focused_fhd.png */; };
 		2706A2B526A8B8B600395986 /* VideoPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2706A2B426A8B8B600395986 /* VideoPlayerViewController.m */; };
-		2706A2C426A8E99000395986 /* vmap.xml in Resources */ = {isa = PBXBuildFile; fileRef = 2706A2C326A8E99000395986 /* vmap.xml */; };
 		2706A2C926AA3FB800395986 /* WebViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2706A2C826AA3FB800395986 /* WebViewViewController.m */; };
-		2751AAF32702396100575375 /* vast_solo.xml in Resources */ = {isa = PBXBuildFile; fileRef = 2751AAF22702396100575375 /* vast_solo.xml */; };
+		C0DA2BC32E297CF600349A6A /* ima-vmap-playlist.xml in Resources */ = {isa = PBXBuildFile; fileRef = C0DA2BC22E297CF600349A6A /* ima-vmap-playlist.xml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,16 +41,15 @@
 		2706A2AF26A8AC9D00395986 /* play_button_focused_fhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play_button_focused_fhd.png; sourceTree = "<group>"; };
 		2706A2B326A8B8B600395986 /* VideoPlayerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideoPlayerViewController.h; sourceTree = "<group>"; };
 		2706A2B426A8B8B600395986 /* VideoPlayerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VideoPlayerViewController.m; sourceTree = "<group>"; };
-		2706A2C326A8E99000395986 /* vmap.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = vmap.xml; sourceTree = "<group>"; };
 		2706A2C726AA3FB800395986 /* WebViewViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebViewViewController.h; sourceTree = "<group>"; };
 		2706A2C826AA3FB800395986 /* WebViewViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebViewViewController.m; sourceTree = "<group>"; };
-		2751AAF22702396100575375 /* vast_solo.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = vast_solo.xml; sourceTree = "<group>"; };
 		5B67EE857EFA5E76C8179347 /* Pods-truex-ios-mobile-reference-appUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-truex-ios-mobile-reference-appUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-truex-ios-mobile-reference-appUITests/Pods-truex-ios-mobile-reference-appUITests.release.xcconfig"; sourceTree = "<group>"; };
 		9D4521AD2B52C275CBAB092F /* libPods-truex-ios-mobile-reference-appUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-truex-ios-mobile-reference-appUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9EBF292F8F1A451D0A9653D /* Pods_truex_ios_mobile_reference_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_truex_ios_mobile_reference_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFC82C5B3061796D71D6726B /* Pods-truex-ios-mobile-reference-appUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-truex-ios-mobile-reference-appUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-truex-ios-mobile-reference-appUITests/Pods-truex-ios-mobile-reference-appUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		B04010D86A60D010D59303E4 /* Pods-truex-ios-mobile-reference-appTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-truex-ios-mobile-reference-appTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-truex-ios-mobile-reference-appTests/Pods-truex-ios-mobile-reference-appTests.release.xcconfig"; sourceTree = "<group>"; };
 		B45F9139C5E350B21405FA73 /* libPods-truex-ios-mobile-reference-appTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-truex-ios-mobile-reference-appTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C0DA2BC22E297CF600349A6A /* ima-vmap-playlist.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "ima-vmap-playlist.xml"; sourceTree = "<group>"; };
 		D08F448F0282AF60920CEFE3 /* Pods-truex-ios-mobile-reference-appTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-truex-ios-mobile-reference-appTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-truex-ios-mobile-reference-appTests/Pods-truex-ios-mobile-reference-appTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F5088784634526CC525C712A /* Pods-truex-ios-mobile-reference-app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-truex-ios-mobile-reference-app.release.xcconfig"; path = "Pods/Target Support Files/Pods-truex-ios-mobile-reference-app/Pods-truex-ios-mobile-reference-app.release.xcconfig"; sourceTree = "<group>"; };
 		FF49F4E7FFD28C570812E400 /* Pods-truex-ios-mobile-reference-app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-truex-ios-mobile-reference-app.debug.xcconfig"; path = "Pods/Target Support Files/Pods-truex-ios-mobile-reference-app/Pods-truex-ios-mobile-reference-app.debug.xcconfig"; sourceTree = "<group>"; };
@@ -113,11 +111,10 @@
 		2706A29E26A8A20700395986 /* res */ = {
 			isa = PBXGroup;
 			children = (
+				C0DA2BC22E297CF600349A6A /* ima-vmap-playlist.xml */,
 				2706A2A726A8A66300395986 /* details_flow_bg_fhd_darken.png */,
 				2706A2AB26A8A69E00395986 /* true-vision-logo_fhd.png */,
 				2706A2AF26A8AC9D00395986 /* play_button_focused_fhd.png */,
-				2706A2C326A8E99000395986 /* vmap.xml */,
-				2751AAF22702396100575375 /* vast_solo.xml */,
 			);
 			path = res;
 			sourceTree = "<group>";
@@ -208,10 +205,9 @@
 				2706A2AC26A8A69F00395986 /* true-vision-logo_fhd.png in Resources */,
 				2706A27626A8A05500395986 /* Assets.xcassets in Resources */,
 				2706A27426A8A05300395986 /* Main.storyboard in Resources */,
-				2706A2C426A8E99000395986 /* vmap.xml in Resources */,
 				2706A2B026A8AC9D00395986 /* play_button_focused_fhd.png in Resources */,
-				2751AAF32702396100575375 /* vast_solo.xml in Resources */,
 				2706A2A826A8A66300395986 /* details_flow_bg_fhd_darken.png in Resources */,
+				C0DA2BC32E297CF600349A6A /* ima-vmap-playlist.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

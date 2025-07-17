@@ -110,19 +110,16 @@ BOOL _adFreePodEarned = NO;
         if ([event.ad.adSystem isEqualToString:@"trueX"]) {
             NSError *error;
             NSData *jsonData = [event.ad.traffickingParameters dataUsingEncoding:NSUTF8StringEncoding];
-            NSDictionary* adParameters = [NSJSONSerialization JSONObjectWithData:jsonData
-                                                                         options:0
-                                                                           error:&error];
+            NSDictionary* adParameters = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:&error];            
             if (!error) {
                 _truexAdActive = YES;
                 [self.player pause];
                 [adsManager pause];
-                NSString* slotType = (CMTimeGetSeconds(self.player.currentTime) == 0) ? @"preroll" : @"midroll";
 
                 // For this demo app only: use a fresh user id each requests to work around user ad limits.
                 TruexAdOptions options = DefaultOptions();
                 options.userAdvertisingId = [[NSUUID UUID] UUIDString];
-
+                
                 self.activeAdRenderer = [[TruexAdRenderer alloc] initWithAdParameters:adParameters options:options delegate:self];
                 [self.activeAdRenderer start:self.view];
             }
@@ -166,10 +163,10 @@ BOOL _adFreePodEarned = NO;
     if (_adFreePodEarned) {
         [self seekOverCurrentAdBreak];
         _adFreePodEarned = NO;
+        [self.player play];
     } else {
         [self.adsManager resume];
     }
-    [self.player play];
 }
 
 // [4]

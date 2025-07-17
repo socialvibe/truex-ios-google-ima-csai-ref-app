@@ -1,0 +1,462 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 54;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2706A26B26A8A05300395986 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2706A26A26A8A05300395986 /* AppDelegate.m */; };
+		2706A26E26A8A05300395986 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2706A26D26A8A05300395986 /* SceneDelegate.m */; };
+		2706A27126A8A05300395986 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2706A27026A8A05300395986 /* ViewController.m */; };
+		2706A27426A8A05300395986 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2706A27226A8A05300395986 /* Main.storyboard */; };
+		2706A27626A8A05500395986 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2706A27526A8A05500395986 /* Assets.xcassets */; };
+		2706A27926A8A05500395986 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2706A27726A8A05500395986 /* LaunchScreen.storyboard */; };
+		2706A27C26A8A05500395986 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2706A27B26A8A05500395986 /* main.m */; };
+		2706A2A826A8A66300395986 /* details_flow_bg_fhd_darken.png in Resources */ = {isa = PBXBuildFile; fileRef = 2706A2A726A8A66300395986 /* details_flow_bg_fhd_darken.png */; };
+		2706A2AC26A8A69F00395986 /* true-vision-logo_fhd.png in Resources */ = {isa = PBXBuildFile; fileRef = 2706A2AB26A8A69E00395986 /* true-vision-logo_fhd.png */; };
+		2706A2B026A8AC9D00395986 /* play_button_focused_fhd.png in Resources */ = {isa = PBXBuildFile; fileRef = 2706A2AF26A8AC9D00395986 /* play_button_focused_fhd.png */; };
+		2706A2B526A8B8B600395986 /* VideoPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2706A2B426A8B8B600395986 /* VideoPlayerViewController.m */; };
+		2706A2C926AA3FB800395986 /* WebViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2706A2C826AA3FB800395986 /* WebViewViewController.m */; };
+		C0DA2BC32E297CF600349A6A /* ima-vmap-playlist.xml in Resources */ = {isa = PBXBuildFile; fileRef = C0DA2BC22E297CF600349A6A /* ima-vmap-playlist.xml */; };
+		DD7144FE39A73E036463F580 /* Pods_truex_ios_google_ima_csai_ref_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E612D9B5F8E6877874F19C5 /* Pods_truex_ios_google_ima_csai_ref_app.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0E612D9B5F8E6877874F19C5 /* Pods_truex_ios_google_ima_csai_ref_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_truex_ios_google_ima_csai_ref_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		168B1671C0C9CFD00162F70A /* Pods-truex-ios-google-ima-csai-ref-app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-truex-ios-google-ima-csai-ref-app.debug.xcconfig"; path = "Pods/Target Support Files/Pods-truex-ios-google-ima-csai-ref-app/Pods-truex-ios-google-ima-csai-ref-app.debug.xcconfig"; sourceTree = "<group>"; };
+		1E62AD5212B18310F31A4F34 /* Pods-truex-ios-google-ima-csai-ref-app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-truex-ios-google-ima-csai-ref-app.release.xcconfig"; path = "Pods/Target Support Files/Pods-truex-ios-google-ima-csai-ref-app/Pods-truex-ios-google-ima-csai-ref-app.release.xcconfig"; sourceTree = "<group>"; };
+		2706A26626A8A05300395986 /* trueVISION.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = trueVISION.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2706A26926A8A05300395986 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		2706A26A26A8A05300395986 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		2706A26C26A8A05300395986 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		2706A26D26A8A05300395986 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		2706A26F26A8A05300395986 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		2706A27026A8A05300395986 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		2706A27326A8A05300395986 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2706A27526A8A05500395986 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2706A27826A8A05500395986 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2706A27A26A8A05500395986 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2706A27B26A8A05500395986 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2706A2A726A8A66300395986 /* details_flow_bg_fhd_darken.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = details_flow_bg_fhd_darken.png; sourceTree = "<group>"; };
+		2706A2AB26A8A69E00395986 /* true-vision-logo_fhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "true-vision-logo_fhd.png"; sourceTree = "<group>"; };
+		2706A2AF26A8AC9D00395986 /* play_button_focused_fhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play_button_focused_fhd.png; sourceTree = "<group>"; };
+		2706A2B326A8B8B600395986 /* VideoPlayerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideoPlayerViewController.h; sourceTree = "<group>"; };
+		2706A2B426A8B8B600395986 /* VideoPlayerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VideoPlayerViewController.m; sourceTree = "<group>"; };
+		2706A2C726AA3FB800395986 /* WebViewViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebViewViewController.h; sourceTree = "<group>"; };
+		2706A2C826AA3FB800395986 /* WebViewViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebViewViewController.m; sourceTree = "<group>"; };
+		C0DA2BC22E297CF600349A6A /* ima-vmap-playlist.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "ima-vmap-playlist.xml"; sourceTree = "<group>"; };
+		F5088784634526CC525C712A /* Pods-truex-ios-mobile-reference-app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-truex-ios-mobile-reference-app.release.xcconfig"; path = "Pods/Target Support Files/Pods-truex-ios-mobile-reference-app/Pods-truex-ios-mobile-reference-app.release.xcconfig"; sourceTree = "<group>"; };
+		FF49F4E7FFD28C570812E400 /* Pods-truex-ios-mobile-reference-app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-truex-ios-mobile-reference-app.debug.xcconfig"; path = "Pods/Target Support Files/Pods-truex-ios-mobile-reference-app/Pods-truex-ios-mobile-reference-app.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2706A26326A8A05300395986 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD7144FE39A73E036463F580 /* Pods_truex_ios_google_ima_csai_ref_app.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2706A25D26A8A05300395986 = {
+			isa = PBXGroup;
+			children = (
+				2706A26826A8A05300395986 /* truex-ios-google-ima-csai-ref-app */,
+				2706A26726A8A05300395986 /* Products */,
+				4280B4599699BAAF257B1A27 /* Pods */,
+				CD6A3C3361A544768288FF98 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		2706A26726A8A05300395986 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2706A26626A8A05300395986 /* trueVISION.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2706A26826A8A05300395986 /* truex-ios-google-ima-csai-ref-app */ = {
+			isa = PBXGroup;
+			children = (
+				2706A29E26A8A20700395986 /* res */,
+				2706A26926A8A05300395986 /* AppDelegate.h */,
+				2706A2B326A8B8B600395986 /* VideoPlayerViewController.h */,
+				2706A2B426A8B8B600395986 /* VideoPlayerViewController.m */,
+				2706A26A26A8A05300395986 /* AppDelegate.m */,
+				2706A26C26A8A05300395986 /* SceneDelegate.h */,
+				2706A26D26A8A05300395986 /* SceneDelegate.m */,
+				2706A26F26A8A05300395986 /* ViewController.h */,
+				2706A27026A8A05300395986 /* ViewController.m */,
+				2706A27226A8A05300395986 /* Main.storyboard */,
+				2706A27526A8A05500395986 /* Assets.xcassets */,
+				2706A27726A8A05500395986 /* LaunchScreen.storyboard */,
+				2706A27A26A8A05500395986 /* Info.plist */,
+				2706A27B26A8A05500395986 /* main.m */,
+				2706A2C726AA3FB800395986 /* WebViewViewController.h */,
+				2706A2C826AA3FB800395986 /* WebViewViewController.m */,
+			);
+			path = "truex-ios-google-ima-csai-ref-app";
+			sourceTree = "<group>";
+		};
+		2706A29E26A8A20700395986 /* res */ = {
+			isa = PBXGroup;
+			children = (
+				C0DA2BC22E297CF600349A6A /* ima-vmap-playlist.xml */,
+				2706A2A726A8A66300395986 /* details_flow_bg_fhd_darken.png */,
+				2706A2AB26A8A69E00395986 /* true-vision-logo_fhd.png */,
+				2706A2AF26A8AC9D00395986 /* play_button_focused_fhd.png */,
+			);
+			path = res;
+			sourceTree = "<group>";
+		};
+		4280B4599699BAAF257B1A27 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FF49F4E7FFD28C570812E400 /* Pods-truex-ios-mobile-reference-app.debug.xcconfig */,
+				F5088784634526CC525C712A /* Pods-truex-ios-mobile-reference-app.release.xcconfig */,
+				168B1671C0C9CFD00162F70A /* Pods-truex-ios-google-ima-csai-ref-app.debug.xcconfig */,
+				1E62AD5212B18310F31A4F34 /* Pods-truex-ios-google-ima-csai-ref-app.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		CD6A3C3361A544768288FF98 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0E612D9B5F8E6877874F19C5 /* Pods_truex_ios_google_ima_csai_ref_app.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2706A26526A8A05300395986 /* truex-ios-google-ima-csai-ref-app */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2706A29526A8A05500395986 /* Build configuration list for PBXNativeTarget "truex-ios-google-ima-csai-ref-app" */;
+			buildPhases = (
+				9B8802203B57F05525439E04 /* [CP] Check Pods Manifest.lock */,
+				2706A26226A8A05300395986 /* Sources */,
+				2706A26326A8A05300395986 /* Frameworks */,
+				2706A26426A8A05300395986 /* Resources */,
+				4D70BE868229C1E4BE417E6D /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "truex-ios-google-ima-csai-ref-app";
+			productName = "truex-ios-mobile-reference-app";
+			productReference = 2706A26626A8A05300395986 /* trueVISION.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2706A25E26A8A05300395986 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = "true[X]";
+				TargetAttributes = {
+					2706A26526A8A05300395986 = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 2706A26126A8A05300395986 /* Build configuration list for PBXProject "truex-ios-google-ima-csai-ref-app" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2706A25D26A8A05300395986;
+			productRefGroup = 2706A26726A8A05300395986 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2706A26526A8A05300395986 /* truex-ios-google-ima-csai-ref-app */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2706A26426A8A05300395986 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2706A27926A8A05500395986 /* LaunchScreen.storyboard in Resources */,
+				2706A2AC26A8A69F00395986 /* true-vision-logo_fhd.png in Resources */,
+				2706A27626A8A05500395986 /* Assets.xcassets in Resources */,
+				2706A27426A8A05300395986 /* Main.storyboard in Resources */,
+				2706A2B026A8AC9D00395986 /* play_button_focused_fhd.png in Resources */,
+				2706A2A826A8A66300395986 /* details_flow_bg_fhd_darken.png in Resources */,
+				C0DA2BC32E297CF600349A6A /* ima-vmap-playlist.xml in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4D70BE868229C1E4BE417E6D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-truex-ios-google-ima-csai-ref-app/Pods-truex-ios-google-ima-csai-ref-app-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-truex-ios-google-ima-csai-ref-app/Pods-truex-ios-google-ima-csai-ref-app-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-truex-ios-google-ima-csai-ref-app/Pods-truex-ios-google-ima-csai-ref-app-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9B8802203B57F05525439E04 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-truex-ios-google-ima-csai-ref-app-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2706A26226A8A05300395986 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2706A2C926AA3FB800395986 /* WebViewViewController.m in Sources */,
+				2706A2B526A8B8B600395986 /* VideoPlayerViewController.m in Sources */,
+				2706A27126A8A05300395986 /* ViewController.m in Sources */,
+				2706A26B26A8A05300395986 /* AppDelegate.m in Sources */,
+				2706A27C26A8A05500395986 /* main.m in Sources */,
+				2706A26E26A8A05300395986 /* SceneDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		2706A27226A8A05300395986 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2706A27326A8A05300395986 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		2706A27726A8A05500395986 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2706A27826A8A05500395986 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2706A29326A8A05500395986 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.3;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		2706A29426A8A05500395986 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2706A29626A8A05500395986 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 168B1671C0C9CFD00162F70A /* Pods-truex-ios-google-ima-csai-ref-app.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 746G57X93G;
+				INFOPLIST_FILE = "truex-ios-google-ima-csai-ref-app/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 2.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.truex.truex-ios-google-ima-csai-ref-app";
+				PRODUCT_NAME = trueVISION;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2706A29726A8A05500395986 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1E62AD5212B18310F31A4F34 /* Pods-truex-ios-google-ima-csai-ref-app.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 746G57X93G;
+				INFOPLIST_FILE = "truex-ios-google-ima-csai-ref-app/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 2.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.truex.truex-ios-google-ima-csai-ref-app";
+				PRODUCT_NAME = trueVISION;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2706A26126A8A05300395986 /* Build configuration list for PBXProject "truex-ios-google-ima-csai-ref-app" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2706A29326A8A05500395986 /* Debug */,
+				2706A29426A8A05500395986 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2706A29526A8A05500395986 /* Build configuration list for PBXNativeTarget "truex-ios-google-ima-csai-ref-app" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2706A29626A8A05500395986 /* Debug */,
+				2706A29726A8A05500395986 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2706A25E26A8A05300395986 /* Project object */;
+}

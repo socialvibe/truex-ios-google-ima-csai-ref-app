@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina3_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -57,26 +57,6 @@ preroll at 0s midroll at 577s (9m37s)</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aRd-wQ-ZD9">
-                                <rect key="frame" x="142" y="244.5" width="105.5" height="27"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="aRd-wQ-ZD9" secondAttribute="height" multiplier="77:20" id="QJB-w1-meI"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="10"/>
-                                <state key="normal" title="🔒 UNLOCK (SOLO)">
-                                    <color key="titleColor" systemColor="labelColor"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <real key="value" value="2.5"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <segue destination="pJm-Kg-bsH" kind="show" id="gwe-mA-gcz"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -86,7 +66,6 @@ preroll at 0s midroll at 577s (9m37s)</string>
                             <constraint firstItem="Z4e-y0-6dg" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="8uU-kE-0wp">
                                 <variation key="heightClass=regular-widthClass=compact" constant="-200"/>
                             </constraint>
-                            <constraint firstItem="aRd-wQ-ZD9" firstAttribute="leading" secondItem="W39-9v-GPf" secondAttribute="trailing" constant="16.5" id="BSB-qj-IsD"/>
                             <constraint firstItem="jpS-f8-8VI" firstAttribute="top" secondItem="W39-9v-GPf" secondAttribute="bottom" constant="25" id="Cn2-Of-n2e"/>
                             <constraint firstItem="ywb-9x-BpJ" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.33" id="GYg-Za-BPA"/>
                             <constraint firstItem="Oy9-LW-CYQ" firstAttribute="top" secondItem="ywb-9x-BpJ" secondAttribute="bottom" id="KFn-Eq-tga"/>
@@ -101,11 +80,8 @@ preroll at 0s midroll at 577s (9m37s)</string>
                             <constraint firstItem="upb-wZ-gH3" firstAttribute="leading" secondItem="Oy9-LW-CYQ" secondAttribute="leading" id="qZq-4Z-1af"/>
                             <constraint firstItem="W39-9v-GPf" firstAttribute="top" secondItem="upb-wZ-gH3" secondAttribute="bottom" constant="20" id="qnF-u0-gBH"/>
                             <constraint firstItem="jpS-f8-8VI" firstAttribute="width" secondItem="upb-wZ-gH3" secondAttribute="width" id="uX7-LQ-hJ6"/>
-                            <constraint firstItem="aRd-wQ-ZD9" firstAttribute="centerY" secondItem="W39-9v-GPf" secondAttribute="centerY" id="vNy-fy-3PJ"/>
                             <constraint firstItem="W39-9v-GPf" firstAttribute="width" secondItem="ywb-9x-BpJ" secondAttribute="width" id="vga-6d-Wjk"/>
-                            <constraint firstItem="aRd-wQ-ZD9" firstAttribute="width" secondItem="aRd-wQ-ZD9" secondAttribute="height" multiplier="77:20" id="xBf-ov-BDW"/>
                             <constraint firstItem="upb-wZ-gH3" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.9" id="zXa-k3-5uR"/>
-                            <constraint firstItem="aRd-wQ-ZD9" firstAttribute="width" secondItem="W39-9v-GPf" secondAttribute="width" id="zwc-SH-lxw"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -191,101 +167,13 @@ preroll at 0s midroll at 577s (9m37s)</string>
             </objects>
             <point key="canvasLocation" x="2215.9420289855075" y="137.94642857142856"/>
         </scene>
-        <!--Unlock Solo View Controller-->
-        <scene sceneID="FQ8-rI-tTL">
-            <objects>
-                <viewController modalPresentationStyle="fullScreen" id="pJm-Kg-bsH" customClass="UnlockSoloViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="LPo-W1-Dtp">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eJe-Tm-fdD" customClass="Unlock">
-                                <rect key="frame" x="20" y="74" width="280" height="356"/>
-                                <subviews>
-                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="WXC-Wu-PSn">
-                                        <rect key="frame" x="216" y="39.5" width="51" height="31"/>
-                                    </switch>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jGt-Pi-uor">
-                                        <rect key="frame" x="15" y="40" width="133" height="30"/>
-                                        <state key="normal" title="Unlock with true[X]"/>
-                                        <connections>
-                                            <action selector="unlockWithTruex:" destination="pJm-Kg-bsH" eventType="touchUpInside" id="EVX-o0-dp7"/>
-                                        </connections>
-                                    </button>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="pAd-1U-8r6">
-                                        <rect key="frame" x="10" y="78" width="260" height="278"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <string key="text">This page is meant to showcase the one stage "solo" tag. On page appear, we will try to download an ad from ad server. When click unlock with true[X] button above, the true[X] Engagement will start. After user finish the ad, the switch will flip to the on position. This state is reset when clicking back and dismissing this page.</string>
-                                        <color key="textColor" systemColor="labelColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstItem="jGt-Pi-uor" firstAttribute="top" secondItem="eJe-Tm-fdD" secondAttribute="top" constant="40" id="Elo-4p-HCP"/>
-                                    <constraint firstItem="pAd-1U-8r6" firstAttribute="leading" secondItem="eJe-Tm-fdD" secondAttribute="leading" constant="10" id="G0u-6s-rXL"/>
-                                    <constraint firstItem="jGt-Pi-uor" firstAttribute="leading" secondItem="eJe-Tm-fdD" secondAttribute="leading" constant="15" id="Qpp-0a-s26"/>
-                                    <constraint firstItem="pAd-1U-8r6" firstAttribute="centerX" secondItem="eJe-Tm-fdD" secondAttribute="centerX" id="a8U-9v-oWm"/>
-                                    <constraint firstItem="pAd-1U-8r6" firstAttribute="top" secondItem="jGt-Pi-uor" secondAttribute="bottom" constant="8" symbolic="YES" id="gzo-Gj-26b"/>
-                                    <constraint firstAttribute="trailing" secondItem="WXC-Wu-PSn" secondAttribute="trailing" constant="15" id="p9I-a8-gh2"/>
-                                    <constraint firstItem="WXC-Wu-PSn" firstAttribute="centerY" secondItem="jGt-Pi-uor" secondAttribute="centerY" id="uAI-Kc-XSF"/>
-                                    <constraint firstAttribute="bottom" secondItem="pAd-1U-8r6" secondAttribute="bottom" id="wqn-RL-2ea"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="35"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e22-zV-CUI">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                <items>
-                                    <navigationItem title="Unlock (SOLO)" id="EJQ-ef-32n">
-                                        <barButtonItem key="leftBarButtonItem" title="&lt; Back" id="eMu-Z4-044">
-                                            <connections>
-                                                <action selector="onBackPressed:" destination="pJm-Kg-bsH" id="Z0k-Au-5H0"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="jQi-us-Jqo"/>
-                        <color key="backgroundColor" systemColor="systemGray6Color"/>
-                        <constraints>
-                            <constraint firstItem="e22-zV-CUI" firstAttribute="width" secondItem="LPo-W1-Dtp" secondAttribute="width" id="36H-fl-zum"/>
-                            <constraint firstItem="jQi-us-Jqo" firstAttribute="bottom" secondItem="eJe-Tm-fdD" secondAttribute="bottom" constant="50" id="Kdk-DM-9wq"/>
-                            <constraint firstItem="e22-zV-CUI" firstAttribute="centerX" secondItem="jQi-us-Jqo" secondAttribute="centerX" id="MLG-K1-yR1"/>
-                            <constraint firstItem="eJe-Tm-fdD" firstAttribute="leading" secondItem="jQi-us-Jqo" secondAttribute="leading" constant="20" id="UIW-Vl-Sy1"/>
-                            <constraint firstItem="e22-zV-CUI" firstAttribute="top" secondItem="jQi-us-Jqo" secondAttribute="top" id="Xe9-i0-ZtC"/>
-                            <constraint firstItem="eJe-Tm-fdD" firstAttribute="top" secondItem="e22-zV-CUI" secondAttribute="bottom" constant="30" id="bKW-wz-ISK"/>
-                            <constraint firstItem="jQi-us-Jqo" firstAttribute="trailing" secondItem="eJe-Tm-fdD" secondAttribute="trailing" constant="20" id="sR0-w0-roT"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="1og-le-gHK"/>
-                    <connections>
-                        <outlet property="unlocked" destination="WXC-Wu-PSn" id="3ML-ih-goK"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="idT-Fm-MPZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="129.375" y="938.75"/>
-        </scene>
     </scenes>
     <resources>
         <image name="details_flow_bg_fhd_darken.png" width="1920" height="1080"/>
         <image name="play_button_focused_fhd.png" width="308" height="80"/>
         <image name="true-vision-logo_fhd.png" width="283" height="60.5"/>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGray6Color">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

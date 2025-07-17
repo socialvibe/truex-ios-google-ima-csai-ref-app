@@ -118,10 +118,12 @@ BOOL _adFreePodEarned = NO;
                 [self.player pause];
                 [adsManager pause];
                 NSString* slotType = (CMTimeGetSeconds(self.player.currentTime) == 0) ? @"preroll" : @"midroll";
-                self.activeAdRenderer = [[TruexAdRenderer alloc] initWithUrl:@"https://media.truex.com/placeholder.js"
-                                                                adParameters:adParameters
-                                                                    slotType:slotType];
-                self.activeAdRenderer.delegate = self;
+
+                // For this demo app only: use a fresh user id each requests to work around user ad limits.
+                TruexAdOptions options = DefaultOptions();
+                options.userAdvertisingId = [[NSUUID UUID] UUIDString];
+
+                self.activeAdRenderer = [[TruexAdRenderer alloc] initWithAdParameters:adParameters options:options delegate:self];
                 [self.activeAdRenderer start:self.view];
             }
         }

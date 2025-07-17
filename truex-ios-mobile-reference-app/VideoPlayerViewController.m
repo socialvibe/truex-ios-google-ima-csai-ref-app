@@ -104,10 +104,9 @@ BOOL _adFreePodEarned = NO;
 - (void)adsManager:(IMAAdsManager *)adsManager didReceiveAdEvent:(IMAAdEvent *)event {
     // Play each ad once it has loaded.
     if (event.type == kIMAAdEvent_LOADED) {
-        [self.player pause];
-        if (!_truexAdActive) {
-            [adsManager start];
-        }
+        [adsManager start];
+
+    } else if (event.type == kIMAAdEvent_STARTED) {
         if ([event.ad.adSystem isEqualToString:@"trueX"]) {
             NSError *error;
             NSData *jsonData = [event.ad.traffickingParameters dataUsingEncoding:NSUTF8StringEncoding];
@@ -116,6 +115,7 @@ BOOL _adFreePodEarned = NO;
                                                                            error:&error];
             if (!error) {
                 _truexAdActive = YES;
+                [self.player pause];
                 [adsManager pause];
                 NSString* slotType = (CMTimeGetSeconds(self.player.currentTime) == 0) ? @"preroll" : @"midroll";
                 self.activeAdRenderer = [[TruexAdRenderer alloc] initWithUrl:@"https://media.truex.com/placeholder.js"

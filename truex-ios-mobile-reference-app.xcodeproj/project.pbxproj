@@ -3,11 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		14CF143483A2D7D674632AFC /* libPods-truex-ios-mobile-reference-appUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D4521AD2B52C275CBAB092F /* libPods-truex-ios-mobile-reference-appUITests.a */; };
+		154063E9656AEEA6EF466004 /* Pods_truex_ios_mobile_reference_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9EBF292F8F1A451D0A9653D /* Pods_truex_ios_mobile_reference_app.framework */; };
 		2706A26B26A8A05300395986 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2706A26A26A8A05300395986 /* AppDelegate.m */; };
 		2706A26E26A8A05300395986 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2706A26D26A8A05300395986 /* SceneDelegate.m */; };
 		2706A27126A8A05300395986 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2706A27026A8A05300395986 /* ViewController.m */; };
@@ -15,47 +15,14 @@
 		2706A27626A8A05500395986 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2706A27526A8A05500395986 /* Assets.xcassets */; };
 		2706A27926A8A05500395986 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2706A27726A8A05500395986 /* LaunchScreen.storyboard */; };
 		2706A27C26A8A05500395986 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2706A27B26A8A05500395986 /* main.m */; };
-		2706A28626A8A05500395986 /* truex_ios_mobile_reference_appTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2706A28526A8A05500395986 /* truex_ios_mobile_reference_appTests.m */; };
-		2706A29126A8A05500395986 /* truex_ios_mobile_reference_appUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2706A29026A8A05500395986 /* truex_ios_mobile_reference_appUITests.m */; };
 		2706A2A826A8A66300395986 /* details_flow_bg_fhd_darken.png in Resources */ = {isa = PBXBuildFile; fileRef = 2706A2A726A8A66300395986 /* details_flow_bg_fhd_darken.png */; };
-		2706A2A926A8A66300395986 /* details_flow_bg_fhd_darken.png in Resources */ = {isa = PBXBuildFile; fileRef = 2706A2A726A8A66300395986 /* details_flow_bg_fhd_darken.png */; };
-		2706A2AA26A8A66300395986 /* details_flow_bg_fhd_darken.png in Resources */ = {isa = PBXBuildFile; fileRef = 2706A2A726A8A66300395986 /* details_flow_bg_fhd_darken.png */; };
 		2706A2AC26A8A69F00395986 /* true-vision-logo_fhd.png in Resources */ = {isa = PBXBuildFile; fileRef = 2706A2AB26A8A69E00395986 /* true-vision-logo_fhd.png */; };
-		2706A2AD26A8A69F00395986 /* true-vision-logo_fhd.png in Resources */ = {isa = PBXBuildFile; fileRef = 2706A2AB26A8A69E00395986 /* true-vision-logo_fhd.png */; };
-		2706A2AE26A8A69F00395986 /* true-vision-logo_fhd.png in Resources */ = {isa = PBXBuildFile; fileRef = 2706A2AB26A8A69E00395986 /* true-vision-logo_fhd.png */; };
 		2706A2B026A8AC9D00395986 /* play_button_focused_fhd.png in Resources */ = {isa = PBXBuildFile; fileRef = 2706A2AF26A8AC9D00395986 /* play_button_focused_fhd.png */; };
-		2706A2B126A8AC9D00395986 /* play_button_focused_fhd.png in Resources */ = {isa = PBXBuildFile; fileRef = 2706A2AF26A8AC9D00395986 /* play_button_focused_fhd.png */; };
-		2706A2B226A8AC9D00395986 /* play_button_focused_fhd.png in Resources */ = {isa = PBXBuildFile; fileRef = 2706A2AF26A8AC9D00395986 /* play_button_focused_fhd.png */; };
 		2706A2B526A8B8B600395986 /* VideoPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2706A2B426A8B8B600395986 /* VideoPlayerViewController.m */; };
-		2706A2B626A8B8B600395986 /* VideoPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2706A2B426A8B8B600395986 /* VideoPlayerViewController.m */; };
-		2706A2B726A8B8B600395986 /* VideoPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2706A2B426A8B8B600395986 /* VideoPlayerViewController.m */; };
 		2706A2C426A8E99000395986 /* vmap.xml in Resources */ = {isa = PBXBuildFile; fileRef = 2706A2C326A8E99000395986 /* vmap.xml */; };
-		2706A2C526A8E99000395986 /* vmap.xml in Resources */ = {isa = PBXBuildFile; fileRef = 2706A2C326A8E99000395986 /* vmap.xml */; };
-		2706A2C626A8E99000395986 /* vmap.xml in Resources */ = {isa = PBXBuildFile; fileRef = 2706A2C326A8E99000395986 /* vmap.xml */; };
 		2706A2C926AA3FB800395986 /* WebViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2706A2C826AA3FB800395986 /* WebViewViewController.m */; };
-		2706A2CA26AA3FB800395986 /* WebViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2706A2C826AA3FB800395986 /* WebViewViewController.m */; };
-		2706A2CB26AA3FB800395986 /* WebViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2706A2C826AA3FB800395986 /* WebViewViewController.m */; };
 		2751AAF32702396100575375 /* vast_solo.xml in Resources */ = {isa = PBXBuildFile; fileRef = 2751AAF22702396100575375 /* vast_solo.xml */; };
-		A582D401C3B42AB7C4E7922D /* libPods-truex-ios-mobile-reference-appTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B45F9139C5E350B21405FA73 /* libPods-truex-ios-mobile-reference-appTests.a */; };
-		B97ED585CD166C0B265F4CED /* libPods-truex-ios-mobile-reference-app.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D2677E3DDC427F9EC3D0719D /* libPods-truex-ios-mobile-reference-app.a */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		2706A28226A8A05500395986 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2706A25E26A8A05300395986 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 2706A26526A8A05300395986;
-			remoteInfo = "truex-ios-mobile-reference-app";
-		};
-		2706A28D26A8A05500395986 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2706A25E26A8A05300395986 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 2706A26526A8A05300395986;
-			remoteInfo = "truex-ios-mobile-reference-app";
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		2706A26626A8A05300395986 /* trueVISION.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = trueVISION.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,12 +37,6 @@
 		2706A27826A8A05500395986 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2706A27A26A8A05500395986 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2706A27B26A8A05500395986 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		2706A28126A8A05500395986 /* truex-ios-mobile-reference-appTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "truex-ios-mobile-reference-appTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2706A28526A8A05500395986 /* truex_ios_mobile_reference_appTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = truex_ios_mobile_reference_appTests.m; sourceTree = "<group>"; };
-		2706A28726A8A05500395986 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2706A28C26A8A05500395986 /* truex-ios-mobile-reference-appUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "truex-ios-mobile-reference-appUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2706A29026A8A05500395986 /* truex_ios_mobile_reference_appUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = truex_ios_mobile_reference_appUITests.m; sourceTree = "<group>"; };
-		2706A29226A8A05500395986 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2706A2A726A8A66300395986 /* details_flow_bg_fhd_darken.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = details_flow_bg_fhd_darken.png; sourceTree = "<group>"; };
 		2706A2AB26A8A69E00395986 /* true-vision-logo_fhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "true-vision-logo_fhd.png"; sourceTree = "<group>"; };
 		2706A2AF26A8AC9D00395986 /* play_button_focused_fhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play_button_focused_fhd.png; sourceTree = "<group>"; };
@@ -87,11 +48,11 @@
 		2751AAF22702396100575375 /* vast_solo.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = vast_solo.xml; sourceTree = "<group>"; };
 		5B67EE857EFA5E76C8179347 /* Pods-truex-ios-mobile-reference-appUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-truex-ios-mobile-reference-appUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-truex-ios-mobile-reference-appUITests/Pods-truex-ios-mobile-reference-appUITests.release.xcconfig"; sourceTree = "<group>"; };
 		9D4521AD2B52C275CBAB092F /* libPods-truex-ios-mobile-reference-appUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-truex-ios-mobile-reference-appUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A9EBF292F8F1A451D0A9653D /* Pods_truex_ios_mobile_reference_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_truex_ios_mobile_reference_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFC82C5B3061796D71D6726B /* Pods-truex-ios-mobile-reference-appUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-truex-ios-mobile-reference-appUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-truex-ios-mobile-reference-appUITests/Pods-truex-ios-mobile-reference-appUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		B04010D86A60D010D59303E4 /* Pods-truex-ios-mobile-reference-appTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-truex-ios-mobile-reference-appTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-truex-ios-mobile-reference-appTests/Pods-truex-ios-mobile-reference-appTests.release.xcconfig"; sourceTree = "<group>"; };
 		B45F9139C5E350B21405FA73 /* libPods-truex-ios-mobile-reference-appTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-truex-ios-mobile-reference-appTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D08F448F0282AF60920CEFE3 /* Pods-truex-ios-mobile-reference-appTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-truex-ios-mobile-reference-appTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-truex-ios-mobile-reference-appTests/Pods-truex-ios-mobile-reference-appTests.debug.xcconfig"; sourceTree = "<group>"; };
-		D2677E3DDC427F9EC3D0719D /* libPods-truex-ios-mobile-reference-app.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-truex-ios-mobile-reference-app.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5088784634526CC525C712A /* Pods-truex-ios-mobile-reference-app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-truex-ios-mobile-reference-app.release.xcconfig"; path = "Pods/Target Support Files/Pods-truex-ios-mobile-reference-app/Pods-truex-ios-mobile-reference-app.release.xcconfig"; sourceTree = "<group>"; };
 		FF49F4E7FFD28C570812E400 /* Pods-truex-ios-mobile-reference-app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-truex-ios-mobile-reference-app.debug.xcconfig"; path = "Pods/Target Support Files/Pods-truex-ios-mobile-reference-app/Pods-truex-ios-mobile-reference-app.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -101,23 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B97ED585CD166C0B265F4CED /* libPods-truex-ios-mobile-reference-app.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2706A27E26A8A05500395986 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A582D401C3B42AB7C4E7922D /* libPods-truex-ios-mobile-reference-appTests.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2706A28926A8A05500395986 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				14CF143483A2D7D674632AFC /* libPods-truex-ios-mobile-reference-appUITests.a in Frameworks */,
+				154063E9656AEEA6EF466004 /* Pods_truex_ios_mobile_reference_app.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,8 +73,6 @@
 			isa = PBXGroup;
 			children = (
 				2706A26826A8A05300395986 /* truex-ios-mobile-reference-app */,
-				2706A28426A8A05500395986 /* truex-ios-mobile-reference-appTests */,
-				2706A28F26A8A05500395986 /* truex-ios-mobile-reference-appUITests */,
 				2706A26726A8A05300395986 /* Products */,
 				4280B4599699BAAF257B1A27 /* Pods */,
 				CD6A3C3361A544768288FF98 /* Frameworks */,
@@ -140,8 +83,6 @@
 			isa = PBXGroup;
 			children = (
 				2706A26626A8A05300395986 /* trueVISION.app */,
-				2706A28126A8A05500395986 /* truex-ios-mobile-reference-appTests.xctest */,
-				2706A28C26A8A05500395986 /* truex-ios-mobile-reference-appUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -167,24 +108,6 @@
 				2706A2C826AA3FB800395986 /* WebViewViewController.m */,
 			);
 			path = "truex-ios-mobile-reference-app";
-			sourceTree = "<group>";
-		};
-		2706A28426A8A05500395986 /* truex-ios-mobile-reference-appTests */ = {
-			isa = PBXGroup;
-			children = (
-				2706A28526A8A05500395986 /* truex_ios_mobile_reference_appTests.m */,
-				2706A28726A8A05500395986 /* Info.plist */,
-			);
-			path = "truex-ios-mobile-reference-appTests";
-			sourceTree = "<group>";
-		};
-		2706A28F26A8A05500395986 /* truex-ios-mobile-reference-appUITests */ = {
-			isa = PBXGroup;
-			children = (
-				2706A29026A8A05500395986 /* truex_ios_mobile_reference_appUITests.m */,
-				2706A29226A8A05500395986 /* Info.plist */,
-			);
-			path = "truex-ios-mobile-reference-appUITests";
 			sourceTree = "<group>";
 		};
 		2706A29E26A8A20700395986 /* res */ = {
@@ -215,9 +138,9 @@
 		CD6A3C3361A544768288FF98 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D2677E3DDC427F9EC3D0719D /* libPods-truex-ios-mobile-reference-app.a */,
 				B45F9139C5E350B21405FA73 /* libPods-truex-ios-mobile-reference-appTests.a */,
 				9D4521AD2B52C275CBAB092F /* libPods-truex-ios-mobile-reference-appUITests.a */,
+				A9EBF292F8F1A451D0A9653D /* Pods_truex_ios_mobile_reference_app.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -244,44 +167,6 @@
 			productReference = 2706A26626A8A05300395986 /* trueVISION.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2706A28026A8A05500395986 /* truex-ios-mobile-reference-appTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 2706A29826A8A05500395986 /* Build configuration list for PBXNativeTarget "truex-ios-mobile-reference-appTests" */;
-			buildPhases = (
-				BFD6EDBFE0D278DD6A4401F4 /* [CP] Check Pods Manifest.lock */,
-				2706A27D26A8A05500395986 /* Sources */,
-				2706A27E26A8A05500395986 /* Frameworks */,
-				2706A27F26A8A05500395986 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				2706A28326A8A05500395986 /* PBXTargetDependency */,
-			);
-			name = "truex-ios-mobile-reference-appTests";
-			productName = "truex-ios-mobile-reference-appTests";
-			productReference = 2706A28126A8A05500395986 /* truex-ios-mobile-reference-appTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		2706A28B26A8A05500395986 /* truex-ios-mobile-reference-appUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 2706A29B26A8A05500395986 /* Build configuration list for PBXNativeTarget "truex-ios-mobile-reference-appUITests" */;
-			buildPhases = (
-				D9EB59319544820C53E281B7 /* [CP] Check Pods Manifest.lock */,
-				2706A28826A8A05500395986 /* Sources */,
-				2706A28926A8A05500395986 /* Frameworks */,
-				2706A28A26A8A05500395986 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				2706A28E26A8A05500395986 /* PBXTargetDependency */,
-			);
-			name = "truex-ios-mobile-reference-appUITests";
-			productName = "truex-ios-mobile-reference-appUITests";
-			productReference = 2706A28C26A8A05500395986 /* truex-ios-mobile-reference-appUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -293,14 +178,6 @@
 				TargetAttributes = {
 					2706A26526A8A05300395986 = {
 						CreatedOnToolsVersion = 11.3.1;
-					};
-					2706A28026A8A05500395986 = {
-						CreatedOnToolsVersion = 11.3.1;
-						TestTargetID = 2706A26526A8A05300395986;
-					};
-					2706A28B26A8A05500395986 = {
-						CreatedOnToolsVersion = 11.3.1;
-						TestTargetID = 2706A26526A8A05300395986;
 					};
 				};
 			};
@@ -318,8 +195,6 @@
 			projectRoot = "";
 			targets = (
 				2706A26526A8A05300395986 /* truex-ios-mobile-reference-app */,
-				2706A28026A8A05500395986 /* truex-ios-mobile-reference-appTests */,
-				2706A28B26A8A05500395986 /* truex-ios-mobile-reference-appUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -337,28 +212,6 @@
 				2706A2B026A8AC9D00395986 /* play_button_focused_fhd.png in Resources */,
 				2751AAF32702396100575375 /* vast_solo.xml in Resources */,
 				2706A2A826A8A66300395986 /* details_flow_bg_fhd_darken.png in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2706A27F26A8A05500395986 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2706A2A926A8A66300395986 /* details_flow_bg_fhd_darken.png in Resources */,
-				2706A2B126A8AC9D00395986 /* play_button_focused_fhd.png in Resources */,
-				2706A2AD26A8A69F00395986 /* true-vision-logo_fhd.png in Resources */,
-				2706A2C526A8E99000395986 /* vmap.xml in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2706A28A26A8A05500395986 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2706A2AA26A8A66300395986 /* details_flow_bg_fhd_darken.png in Resources */,
-				2706A2B226A8AC9D00395986 /* play_button_focused_fhd.png in Resources */,
-				2706A2AE26A8A69F00395986 /* true-vision-logo_fhd.png in Resources */,
-				2706A2C626A8E99000395986 /* vmap.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -404,50 +257,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		BFD6EDBFE0D278DD6A4401F4 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-truex-ios-mobile-reference-appTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D9EB59319544820C53E281B7 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-truex-ios-mobile-reference-appUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -464,40 +273,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2706A27D26A8A05500395986 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2706A2CA26AA3FB800395986 /* WebViewViewController.m in Sources */,
-				2706A28626A8A05500395986 /* truex_ios_mobile_reference_appTests.m in Sources */,
-				2706A2B626A8B8B600395986 /* VideoPlayerViewController.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2706A28826A8A05500395986 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2706A2CB26AA3FB800395986 /* WebViewViewController.m in Sources */,
-				2706A29126A8A05500395986 /* truex_ios_mobile_reference_appUITests.m in Sources */,
-				2706A2B726A8B8B600395986 /* VideoPlayerViewController.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		2706A28326A8A05500395986 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 2706A26526A8A05300395986 /* truex-ios-mobile-reference-app */;
-			targetProxy = 2706A28226A8A05500395986 /* PBXContainerItemProxy */;
-		};
-		2706A28E26A8A05500395986 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 2706A26526A8A05300395986 /* truex-ios-mobile-reference-app */;
-			targetProxy = 2706A28D26A8A05500395986 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		2706A27226A8A05300395986 /* Main.storyboard */ = {
@@ -635,14 +411,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 746G57X93G;
 				INFOPLIST_FILE = "truex-ios-mobile-reference-app/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.truex.truex-ios-mobile-reference-app";
 				PRODUCT_NAME = trueVISION;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -655,97 +432,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 746G57X93G;
 				INFOPLIST_FILE = "truex-ios-mobile-reference-app/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.truex.truex-ios-mobile-reference-app";
 				PRODUCT_NAME = trueVISION;
 				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		2706A29926A8A05500395986 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D08F448F0282AF60920CEFE3 /* Pods-truex-ios-mobile-reference-appTests.debug.xcconfig */;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 746G57X93G;
-				INFOPLIST_FILE = "truex-ios-mobile-reference-appTests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.truex.truex-ios-mobile-reference-appTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/truex-ios-mobile-reference-app.app/truex-ios-mobile-reference-app";
-			};
-			name = Debug;
-		};
-		2706A29A26A8A05500395986 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B04010D86A60D010D59303E4 /* Pods-truex-ios-mobile-reference-appTests.release.xcconfig */;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 746G57X93G;
-				INFOPLIST_FILE = "truex-ios-mobile-reference-appTests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.truex.truex-ios-mobile-reference-appTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/truex-ios-mobile-reference-app.app/truex-ios-mobile-reference-app";
-			};
-			name = Release;
-		};
-		2706A29C26A8A05500395986 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = AFC82C5B3061796D71D6726B /* Pods-truex-ios-mobile-reference-appUITests.debug.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 746G57X93G;
-				INFOPLIST_FILE = "truex-ios-mobile-reference-appUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.truex.truex-ios-mobile-reference-appUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "truex-ios-mobile-reference-app";
-			};
-			name = Debug;
-		};
-		2706A29D26A8A05500395986 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5B67EE857EFA5E76C8179347 /* Pods-truex-ios-mobile-reference-appUITests.release.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 746G57X93G;
-				INFOPLIST_FILE = "truex-ios-mobile-reference-appUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.truex.truex-ios-mobile-reference-appUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "truex-ios-mobile-reference-app";
 			};
 			name = Release;
 		};
@@ -766,24 +464,6 @@
 			buildConfigurations = (
 				2706A29626A8A05500395986 /* Debug */,
 				2706A29726A8A05500395986 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		2706A29826A8A05500395986 /* Build configuration list for PBXNativeTarget "truex-ios-mobile-reference-appTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				2706A29926A8A05500395986 /* Debug */,
-				2706A29A26A8A05500395986 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		2706A29B26A8A05500395986 /* Build configuration list for PBXNativeTarget "truex-ios-mobile-reference-appUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				2706A29C26A8A05500395986 /* Debug */,
-				2706A29D26A8A05500395986 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -1,19 +1,9 @@
 source 'https://github.com/CocoaPods/Specs.git'
 source 'https://github.com/socialvibe/cocoapod-specs.git'
-platform :ios, '10'
+platform :ios, '12'
 
 target 'truex-ios-mobile-reference-app' do
-  pod 'TruexAdRenderer-iOS', '3.2.4'
-  pod 'GoogleAds-IMA-iOS-SDK', '~> 3.14'
-
-  target 'truex-ios-mobile-reference-appTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
-  target 'truex-ios-mobile-reference-appUITests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
+  use_frameworks!
+  pod 'TruexAdRenderer-iOS', '4.1.0'
+  pod 'GoogleAds-IMA-iOS-SDK', '~> 3.26'
 end

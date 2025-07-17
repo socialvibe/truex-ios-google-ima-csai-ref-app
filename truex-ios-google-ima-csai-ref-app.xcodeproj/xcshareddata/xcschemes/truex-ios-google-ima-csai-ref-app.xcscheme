@@ -17,8 +17,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2706A26526A8A05300395986"
                BuildableName = "trueVISION.app"
-               BlueprintName = "truex-ios-mobile-reference-app"
-               ReferencedContainer = "container:truex-ios-mobile-reference-app.xcodeproj">
+               BlueprintName = "truex-ios-google-ima-csai-ref-app"
+               ReferencedContainer = "container:truex-ios-google-ima-csai-ref-app.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -46,8 +46,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2706A26526A8A05300395986"
             BuildableName = "trueVISION.app"
-            BlueprintName = "truex-ios-mobile-reference-app"
-            ReferencedContainer = "container:truex-ios-mobile-reference-app.xcodeproj">
+            BlueprintName = "truex-ios-google-ima-csai-ref-app"
+            ReferencedContainer = "container:truex-ios-google-ima-csai-ref-app.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -63,8 +63,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2706A26526A8A05300395986"
             BuildableName = "trueVISION.app"
-            BlueprintName = "truex-ios-mobile-reference-app"
-            ReferencedContainer = "container:truex-ios-mobile-reference-app.xcodeproj">
+            BlueprintName = "truex-ios-google-ima-csai-ref-app"
+            ReferencedContainer = "container:truex-ios-google-ima-csai-ref-app.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

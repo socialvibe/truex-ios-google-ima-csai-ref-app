@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:truex-ios-mobile-reference-app.xcodeproj">
+      location = "group:truex-ios-google-ima-csai-ref-app.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">

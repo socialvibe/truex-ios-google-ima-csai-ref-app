@@ -32,7 +32,7 @@ BOOL _adFreePodEarned = NO;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
     [NSNotificationCenter.defaultCenter addObserver:self
                                            selector:@selector(pause)
                                                name:UIApplicationWillResignActiveNotification
@@ -110,16 +110,16 @@ BOOL _adFreePodEarned = NO;
         if ([event.ad.adSystem isEqualToString:@"trueX"]) {
             NSError *error;
             NSData *jsonData = [event.ad.traffickingParameters dataUsingEncoding:NSUTF8StringEncoding];
-            NSDictionary* adParameters = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:&error];            
+            NSDictionary* adParameters = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:&error];
             if (!error) {
                 _truexAdActive = YES;
                 [self.player pause];
                 [adsManager pause];
 
-                // For this demo app only: use a fresh user id each requests to work around user ad limits.
+                // For this demo app only: use a fresh user id each request to work around user ad limits.
                 TruexAdOptions options = DefaultOptions();
                 options.userAdvertisingId = [[NSUUID UUID] UUIDString];
-                
+
                 self.activeAdRenderer = [[TruexAdRenderer alloc] initWithAdParameters:adParameters options:options delegate:self];
                 [self.activeAdRenderer start:self.view];
             }
@@ -203,10 +203,10 @@ BOOL _adFreePodEarned = NO;
     // svc.modalPresentationStyle = UIModalPresentationOverCurrentContext;
     // [self presentViewController:svc animated:YES completion:nil];
     // [self.activeAdRenderer pause];
-    
+
     // Or, open the URL directly in Safari
     // [[UIApplication sharedApplication] openURL:[NSURL URLWithString: url] options:@{} completionHandler:nil];
-    
+
     // Or, open with the existing in-app webview
      UIStoryboard* storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
      WebViewViewController* newViewController = [storyBoard instantiateViewControllerWithIdentifier:@"webviewVC"];
@@ -260,10 +260,20 @@ BOOL _adFreePodEarned = NO;
 - (void)fetchVmapFromServer {
     IMAAdDisplayContainer *adDisplayContainer = [[IMAAdDisplayContainer alloc] initWithAdContainer:self.view
                                                                                     viewController:self];
-    IMAAdsRequest *request = [[IMAAdsRequest alloc] initWithAdTagUrl:kAdTagURLString
-                                                  adDisplayContainer:adDisplayContainer
-                                                     contentPlayhead:self.contentPlayhead
-                                                          userContext:nil];
+    // "Real" requests original from an ad server via an ad url.
+    // However for this demo app, we use a local VMAP xml file to allow the developer
+    // to see the VAST xml contents directly, and to allow edits and explorations.
+//    IMAAdsRequest *request = [[IMAAdsRequest alloc] initWithAdTagUrl:kAdTagURLString
+//                                                  adDisplayContainer:adDisplayContainer
+//                                                     contentPlayhead:self.contentPlayhead
+//                                                          userContext:nil];
+    NSString* vmapPlaylistPath = [[NSBundle mainBundle] pathForResource:@"ima-vmap-playlist" ofType:@"xml"];
+    NSData* vmapData = [NSData dataWithContentsOfFile:vmapPlaylistPath];
+    NSString* vmapResponse = [[NSString alloc] initWithData:vmapData encoding:NSUTF8StringEncoding];
+    IMAAdsRequest *request = [[IMAAdsRequest alloc] initWithAdsResponse:vmapResponse
+                                                     adDisplayContainer:adDisplayContainer
+                                                        contentPlayhead:self.contentPlayhead
+                                                            userContext:nil];
     [self.adsLoader requestAdsWithRequest:request];
 }
 
@@ -287,10 +297,10 @@ BOOL _adFreePodEarned = NO;
     UIAlertController* alert = [UIAlertController alertControllerWithTitle:title
                                    message:message
                                    preferredStyle:UIAlertControllerStyleAlert];
-     
+
     UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
        handler:^(UIAlertAction * action) {}];
-     
+
     [alert addAction:defaultAction];
     dispatch_async(dispatch_get_main_queue(), ^{
         [self presentViewController:alert animated:YES completion:completionCallback];

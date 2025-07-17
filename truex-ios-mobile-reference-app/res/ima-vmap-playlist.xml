@@ -14,7 +14,7 @@
                   <Linear>
                     <Duration>00:00:01</Duration>
                     <AdParameters>
-                      <![CDATA[ {"vast_config_url":"https://qa-get.truex.com/a1f29c5636cc83e3ed04e9c7ec3bde8e66f7f0c5/vast/config?dimension_1=PI-2809-video-ad}"]]>
+                      <![CDATA[{"vast_config_url":"https://qa-get.truex.com/a1f29c5636cc83e3ed04e9c7ec3bde8e66f7f0c5/vast/config?dimension_1=PI-2809-video-ad"}]]>
                     </AdParameters>
                     <MediaFiles>
                       <MediaFile delivery="progressive" width="1280" height="720" type="video/mp4" scalable="true" maintainAspectRatio="true">
@@ -60,7 +60,7 @@
                   <Linear>
                     <Duration>00:00:01</Duration>
                     <AdParameters>
-                      <![CDATA[ {"vast_config_url":"https://qa-get.truex.com/a1f29c5636cc83e3ed04e9c7ec3bde8e66f7f0c5/vast/config?dimension_1=PI-2809-basic-ad"}]]>
+                      <![CDATA[{"vast_config_url":"https://qa-get.truex.com/a1f29c5636cc83e3ed04e9c7ec3bde8e66f7f0c5/vast/config?dimension_1=PI-2809-basic-ad"}]]>
                     </AdParameters>
                     <MediaFiles>
                       <MediaFile delivery="progressive" width="1280" height="720" type="video/mp4" scalable="true" maintainAspectRatio="true">

@@ -28,12 +28,18 @@
               </Creatives>
             </InLine>
           </Ad>
-          <Ad id="coffee-preroll" sequence="2">
+          <Ad id="idvx-preroll" sequence="2">
+            <Wrapper>
+              <AdSystem>IDVx</AdSystem>
+              <VASTAdTagURI><![CDATA[https://qa-get.truex.com/eb9f752aeab71d71dd129da48ed98206e53a96dd/vast/idvx/generic?ip=108.213.126.254]]></VASTAdTagURI>
+            </Wrapper>
+          </Ad>
+          <Ad id="coffee-preroll" sequence="3">
             <InLine>
               <AdSystem>GDFP</AdSystem>
               <AdTitle>Coffee Preroll</AdTitle>
               <Creatives>
-                <Creative id="coffee-preroll" sequence="2">
+                <Creative id="coffee-preroll" sequence="3">
                   <Linear>
                     <Duration>00:00:30</Duration>
                     <MediaFiles>
@@ -77,22 +83,11 @@
               </Creatives>
             </InLine>
           </Ad>
-          <Ad id="airline-midroll" sequence="2">
-            <InLine>
-              <AdSystem>GDFP</AdSystem>
-              <AdTitle>Airline Midroll</AdTitle>
-              <Creatives>
-                <Creative id="airline-midroll" sequence="2">
-                  <Linear>
-                    <Duration>00:00:30</Duration>
-                    <MediaFiles>
-                      <MediaFile delivery="progressive" width="1280" height="720" type="video/mp4" scalable="true" maintainAspectRatio="true">
-                        <![CDATA[https://ctv.truex.com/assets/airline-720p.mp4]]></MediaFile>
-                    </MediaFiles>
-                  </Linear>
-                </Creative>
-              </Creatives>
-            </InLine>
+          <Ad id="idvx-midroll" sequence="2">
+            <Wrapper>
+              <AdSystem>IDVx</AdSystem>
+              <VASTAdTagURI><![CDATA[https://qa-get.truex.com/eb9f752aeab71d71dd129da48ed98206e53a96dd/vast/idvx/generic?ip=108.213.126.254]]></VASTAdTagURI>
+            </Wrapper>
           </Ad>
           <Ad id="pets-midroll" sequence="3">
             <InLine>

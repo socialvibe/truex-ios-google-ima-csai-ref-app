@@ -15,7 +15,19 @@ NSString* const kContentURLString = @"https://ctv.truex.com/assets/reference-app
 NSString *const kAdTagURLString = @"https://stash.truex.com/ios/reference_app/ima-vmap-playlist.xml";
 
 
+// Ad type enumeration
+typedef NS_ENUM(NSInteger, InteractiveAdType) {
+    InteractiveAdTypeNone = 0,
+    InteractiveAdTypeTrueX,
+    InteractiveAdTypeIDVx
+};
+
 @interface VideoPlayerViewController () <IMAAdsLoaderDelegate, IMAAdsManagerDelegate>
+{
+    // Internal state for the ad manager (instance variables, not globals)
+    BOOL _adFreePodEarned;
+    InteractiveAdType _currentAdType;
+}
 
 @property TruexAdRenderer* activeAdRenderer;
 @property(nonatomic) IMAAVPlayerContentPlayhead *contentPlayhead;
@@ -23,10 +35,6 @@ NSString *const kAdTagURLString = @"https://stash.truex.com/ios/reference_app/im
 @property(nonatomic) IMAAdsManager *adsManager;
 
 @end
-
-// internal state for the fake ad manager
-BOOL _truexAdActive = NO;
-BOOL _adFreePodEarned = NO;
 
 @implementation VideoPlayerViewController
 
@@ -83,6 +91,35 @@ BOOL _adFreePodEarned = NO;
     self.activeAdRenderer = nil;
 }
 
+// Seek IMA's ad player to the end so the placeholder video completes immediately when resumed.
+// IMA SDK creates its own internal AVPlayer for ads - we only provide a container view.
+// We find it by traversing the view hierarchy for an AVPlayerLayer that isn't our content player.
+- (void)seekIMAAdPlayerToEnd {
+    [self seekAVPlayerLayerToEndInView:self.view];
+}
+
+- (BOOL)seekAVPlayerLayerToEndInView:(UIView *)view {
+    for (CALayer *sublayer in view.layer.sublayers) {
+        if ([sublayer isKindOfClass:[AVPlayerLayer class]]) {
+            AVPlayer *adPlayer = ((AVPlayerLayer *)sublayer).player;
+            if (adPlayer && adPlayer != self.player) {
+                CMTime duration = adPlayer.currentItem.duration;
+                if (CMTIME_IS_VALID(duration) && !CMTIME_IS_INDEFINITE(duration)) {
+                    CMTime seekTime = CMTimeSubtract(duration, CMTimeMake(100, 1000));
+                    [adPlayer seekToTime:seekTime toleranceBefore:kCMTimeZero toleranceAfter:kCMTimeZero];
+                    return YES;
+                }
+            }
+        }
+    }
+    for (UIView *subview in view.subviews) {
+        if ([self seekAVPlayerLayerToEndInView:subview]) {
+            return YES;
+        }
+    }
+    return NO;
+}
+
 #pragma mark - IMAAdsLoaderDelegate
 
 - (void)adsLoader:(IMAAdsLoader *)loader adsLoadedWithData:(IMAAdsLoadedData *)adsLoadedData {
@@ -107,19 +144,56 @@ BOOL _adFreePodEarned = NO;
         [adsManager start];
 
     } else if (event.type == kIMAAdEvent_STARTED) {
-        if ([event.ad.adSystem isEqualToString:@"trueX"]) {
-            NSString* vastConfigUrl = [event.ad.adDescription stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
-            if ([vastConfigUrl length] > 0) {
-                _truexAdActive = YES;
-                [self.player pause];
-                [adsManager pause];
+        BOOL isTrueXAd = [event.ad.adSystem isEqualToString:@"trueX"];
+        BOOL isIDVxAd = [event.ad.adSystem isEqualToString:@"IDVx"];
 
-                // For this demo app only: use a fresh user id each request to work around user ad limits.
-                TruexAdOptions options = DefaultOptions();
-                options.userAdvertisingId = [[NSUUID UUID] UUIDString];
+        if (isTrueXAd || isIDVxAd) {
+            [self.player pause];
+            [adsManager pause];
+            [self seekIMAAdPlayerToEnd];
 
-                self.activeAdRenderer = [[TruexAdRenderer alloc] initWithVastConfigUrl:vastConfigUrl options:options delegate:self];
-                [self.activeAdRenderer start:self.view];
+            // For this demo app only: use a fresh user id each request to work around user ad limits.
+            TruexAdOptions options = DefaultOptions();
+            options.userAdvertisingId = [[NSUUID UUID] UUIDString];
+
+            if (isTrueXAd) {
+                // TrueX ads: use vastConfigUrl from ad description
+                // supportsUserCancelStream allows user to back out from the choice card
+                _currentAdType = InteractiveAdTypeTrueX;
+                options.supportsUserCancelStream = YES;
+
+                NSString* vastConfigUrl = [event.ad.adDescription stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+                if ([vastConfigUrl length] > 0) {
+                    self.activeAdRenderer = [[TruexAdRenderer alloc] initWithVastConfigUrl:vastConfigUrl options:options delegate:self];
+                    [self.activeAdRenderer start:self.view];
+                } else {
+                    NSLog(@"TrueX ad missing vastConfigUrl in description");
+                    [self truexExitHelper];
+                    [adsManager resume];
+                }
+            } else {
+                // IDVx ads: use adParameters JSON from traffickingParameters
+                // IDVx ads start automatically without opt-in, so no user cancel stream
+                _currentAdType = InteractiveAdTypeIDVx;
+                options.supportsUserCancelStream = NO;
+
+                NSString* rawParameters = [event.ad.traffickingParameters stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+                if ([rawParameters length] > 0) {
+                    NSError* jsonError = nil;
+                    NSDictionary* adParameters = [NSJSONSerialization JSONObjectWithData:[rawParameters dataUsingEncoding:NSUTF8StringEncoding] options:0 error:&jsonError];
+                    if (adParameters && !jsonError) {
+                        self.activeAdRenderer = [[TruexAdRenderer alloc] initWithAdParameters:adParameters options:options delegate:self];
+                        [self.activeAdRenderer start:self.view];
+                    } else {
+                        NSLog(@"IDVx ad failed to parse traffickingParameters: %@", jsonError);
+                        [self truexExitHelper];
+                        [adsManager resume];
+                    }
+                } else {
+                    NSLog(@"IDVx ad missing traffickingParameters");
+                    [self truexExitHelper];
+                    [adsManager resume];
+                }
             }
         }
     }
@@ -151,18 +225,25 @@ BOOL _adFreePodEarned = NO;
 // [4] - Respond to renderer terminating events
 - (void)truexExitHelper {
     [self resetActiveAdRenderer];
-    _truexAdActive = NO;
+    _currentAdType = InteractiveAdTypeNone;
 }
 
 - (void)onAdCompleted:(NSInteger)timeSpent {
-    // true[X] - User has finished the true[X] engagement, resume the video stream
+    // User has finished the interactive ad engagement, resume the video stream
     NSLog(@"truex: onAdCompleted: %ld", (long) timeSpent);
+
+    // Capture ad type before clearing state
+    InteractiveAdType completedAdType = _currentAdType;
     [self truexExitHelper];
-    if (_adFreePodEarned) {
+
+    // Only TrueX ads can earn ad-free credit to skip the ad break
+    // IDVx ads always continue to the next ad
+    if (completedAdType == InteractiveAdTypeTrueX && _adFreePodEarned) {
         [self seekOverCurrentAdBreak];
         _adFreePodEarned = NO;
         [self.player play];
     } else {
+        // IDVx or TrueX without credit: continue to next ad in the pod
         [self.adsManager resume];
     }
 }
@@ -185,9 +266,12 @@ BOOL _adFreePodEarned = NO;
 
 // [3] - Respond to onAdFreePod
 - (void)onAdFreePod {
-    // true[X] - User has met engagement requirements, skips past remaining pod ads
+    // User has met engagement requirements, skips past remaining pod ads
+    // Note: Only TrueX ads can earn this credit, IDVx ads never fire this event
     NSLog(@"truex: onAdFreePod");
-    _adFreePodEarned = YES;
+    if (_currentAdType == InteractiveAdTypeTrueX) {
+        _adFreePodEarned = YES;
+    }
 }
 
 // [5] - Other delegate method

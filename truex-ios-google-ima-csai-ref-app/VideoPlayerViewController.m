@@ -156,44 +156,24 @@ typedef NS_ENUM(NSInteger, InteractiveAdType) {
             TruexAdOptions options = DefaultOptions();
             options.userAdvertisingId = [[NSUUID UUID] UUIDString];
 
-            if (isTrueXAd) {
-                // TrueX ads: use vastConfigUrl from ad description
-                // supportsUserCancelStream allows user to back out from the choice card
-                _currentAdType = InteractiveAdTypeTrueX;
-                options.supportsUserCancelStream = YES;
-
-                NSString* vastConfigUrl = [event.ad.adDescription stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
-                if ([vastConfigUrl length] > 0) {
-                    self.activeAdRenderer = [[TruexAdRenderer alloc] initWithVastConfigUrl:vastConfigUrl options:options delegate:self];
-                    [self.activeAdRenderer start:self.view];
-                } else {
-                    NSLog(@"TrueX ad missing vastConfigUrl in description");
-                    [self truexExitHelper];
-                    [adsManager resume];
-                }
+            _currentAdType = isTrueXAd ? InteractiveAdTypeTrueX : InteractiveAdTypeIDVx;
+            options.supportsUserCancelStream = isTrueXAd ? YES : NO;
+            
+            NSError* jsonError = nil;
+            NSDictionary* adParameters = nil;
+            NSString* rawParameters = [event.ad.traffickingParameters stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+            
+            if ([rawParameters length] > 0) {
+                adParameters = [NSJSONSerialization JSONObjectWithData:[rawParameters dataUsingEncoding:NSUTF8StringEncoding] options:0 error:&jsonError];
+            }
+            
+            if (adParameters && !jsonError) {
+                self.activeAdRenderer = [[TruexAdRenderer alloc] initWithAdParameters:adParameters options:options delegate:self];
+                [self.activeAdRenderer start:self.view];
             } else {
-                // IDVx ads: use adParameters JSON from traffickingParameters
-                // IDVx ads start automatically without opt-in, so no user cancel stream
-                _currentAdType = InteractiveAdTypeIDVx;
-                options.supportsUserCancelStream = NO;
-
-                NSString* rawParameters = [event.ad.traffickingParameters stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
-                if ([rawParameters length] > 0) {
-                    NSError* jsonError = nil;
-                    NSDictionary* adParameters = [NSJSONSerialization JSONObjectWithData:[rawParameters dataUsingEncoding:NSUTF8StringEncoding] options:0 error:&jsonError];
-                    if (adParameters && !jsonError) {
-                        self.activeAdRenderer = [[TruexAdRenderer alloc] initWithAdParameters:adParameters options:options delegate:self];
-                        [self.activeAdRenderer start:self.view];
-                    } else {
-                        NSLog(@"IDVx ad failed to parse traffickingParameters: %@", jsonError);
-                        [self truexExitHelper];
-                        [adsManager resume];
-                    }
-                } else {
-                    NSLog(@"IDVx ad missing traffickingParameters");
-                    [self truexExitHelper];
-                    [adsManager resume];
-                }
+                NSLog(@"Missing or invalid traffickingParameters: %@", jsonError);
+                [self truexExitHelper];
+                [adsManager resume];
             }
         }
     }

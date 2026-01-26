@@ -6,34 +6,23 @@
         <VAST xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="vast.xsd"
             version="3.0">
           <Ad id="truex-preroll" sequence="1">
-            <InLine>
+            <Wrapper>
               <AdSystem>trueX</AdSystem>
-              <AdTitle>TrueX Interactive Preroll</AdTitle>
-              <Description>
-                <![CDATA[ https://qa-get.truex.com/a1f29c5636cc83e3ed04e9c7ec3bde8e66f7f0c5/vast/config?dimension_1=PI-2809-video-ad ]]>
-              </Description>
-              <Creatives>
-                <Creative id="truex-preroll" sequence="1">
-                  <Linear>
-                    <Duration>00:00:01</Duration>
-                    <AdParameters>
-                      <![CDATA[{ }]]>
-                    </AdParameters>
-                    <MediaFiles>
-                      <MediaFile delivery="progressive" width="1280" height="720" type="video/mp4" scalable="true" maintainAspectRatio="true">
-                        <![CDATA[https://media.truex.com/m/video/blank_uplynk.mp4]]></MediaFile>
-                    </MediaFiles>
-                  </Linear>
-                </Creative>
-              </Creatives>
-            </InLine>
+              <VASTAdTagURI><![CDATA[https://get.truex.com/22c36d3926383ba62994809a60b4649e3ced1070/vast/generic?ip=108.213.126.254]]></VASTAdTagURI>
+            </Wrapper>
           </Ad>
-          <Ad id="coffee-preroll" sequence="2">
+          <Ad id="idvx-preroll" sequence="2">
+            <Wrapper>
+              <AdSystem>IDVx</AdSystem>
+              <VASTAdTagURI><![CDATA[https://get.truex.com/132f66121635ac312e42f1eb018081d50d10fe2a/vast/idvx/generic?ip=108.213.126.254]]></VASTAdTagURI>
+            </Wrapper>
+          </Ad>
+          <Ad id="coffee-preroll" sequence="3">
             <InLine>
               <AdSystem>GDFP</AdSystem>
               <AdTitle>Coffee Preroll</AdTitle>
               <Creatives>
-                <Creative id="coffee-preroll" sequence="2">
+                <Creative id="coffee-preroll" sequence="3">
                   <Linear>
                     <Duration>00:00:30</Duration>
                     <MediaFiles>
@@ -54,45 +43,17 @@
       <vmap:VASTAdData>
         <VAST xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="vast.xsd"
             version="3.0">
-          <Ad id="truex-midroll" sequence="1">
-            <InLine>
+          <Ad id="truex-preroll" sequence="1">
+            <Wrapper>
               <AdSystem>trueX</AdSystem>
-              <AdTitle>TrueX Interactive Midroll</AdTitle>
-              <Description>
-                <![CDATA[ https://qa-get.truex.com/a1f29c5636cc83e3ed04e9c7ec3bde8e66f7f0c5/vast/config?dimension_1=PI-2809-basic-ad ]]>
-              </Description>
-              <Creatives>
-                <Creative id="truex-midroll" sequence="1">
-                  <Linear>
-                    <Duration>00:00:01</Duration>
-                    <AdParameters>
-                      <![CDATA[{ }]]>
-                    </AdParameters>
-                    <MediaFiles>
-                      <MediaFile delivery="progressive" width="1280" height="720" type="video/mp4" scalable="true" maintainAspectRatio="true">
-                        <![CDATA[https://media.truex.com/m/video/blank_uplynk.mp4]]></MediaFile>
-                    </MediaFiles>
-                  </Linear>
-                </Creative>
-              </Creatives>
-            </InLine>
+              <VASTAdTagURI><![CDATA[https://get.truex.com/22c36d3926383ba62994809a60b4649e3ced1070/vast/generic?ip=108.213.126.254]]></VASTAdTagURI>
+            </Wrapper>
           </Ad>
-          <Ad id="airline-midroll" sequence="2">
-            <InLine>
-              <AdSystem>GDFP</AdSystem>
-              <AdTitle>Airline Midroll</AdTitle>
-              <Creatives>
-                <Creative id="airline-midroll" sequence="2">
-                  <Linear>
-                    <Duration>00:00:30</Duration>
-                    <MediaFiles>
-                      <MediaFile delivery="progressive" width="1280" height="720" type="video/mp4" scalable="true" maintainAspectRatio="true">
-                        <![CDATA[https://ctv.truex.com/assets/airline-720p.mp4]]></MediaFile>
-                    </MediaFiles>
-                  </Linear>
-                </Creative>
-              </Creatives>
-            </InLine>
+          <Ad id="idvx-preroll" sequence="2">
+            <Wrapper>
+              <AdSystem>IDVx</AdSystem>
+              <VASTAdTagURI><![CDATA[https://get.truex.com/132f66121635ac312e42f1eb018081d50d10fe2a/vast/idvx/generic?ip=108.213.126.254]]></VASTAdTagURI>
+            </Wrapper>
           </Ad>
           <Ad id="pets-midroll" sequence="3">
             <InLine>

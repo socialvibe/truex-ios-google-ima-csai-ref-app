@@ -95,7 +95,9 @@ typedef NS_ENUM(NSInteger, InteractiveAdType) {
 // IMA SDK creates its own internal AVPlayer for ads - we only provide a container view.
 // We find it by traversing the view hierarchy for an AVPlayerLayer that isn't our content player.
 - (void)seekIMAAdPlayerToEnd {
-    [self seekAVPlayerLayerToEndInView:self.view];
+    if (![self seekAVPlayerLayerToEndInView:self.view]) {
+        NSLog(@"Warning: Could not find IMA ad player to seek - IMA SDK internal structure may have changed");
+    }
 }
 
 - (BOOL)seekAVPlayerLayerToEndInView:(UIView *)view {
@@ -206,6 +208,7 @@ typedef NS_ENUM(NSInteger, InteractiveAdType) {
 - (void)truexExitHelper {
     [self resetActiveAdRenderer];
     _currentAdType = InteractiveAdTypeNone;
+    _adFreePodEarned = NO;
 }
 
 - (void)onAdCompleted:(NSInteger)timeSpent {

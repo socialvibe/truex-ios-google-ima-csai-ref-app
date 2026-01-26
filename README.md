@@ -47,7 +47,7 @@ IDVx ads are **interactive ads** that start **automatically without requiring op
 
 # Integration Steps
 
-The following steps are a guideline for the Infillion Ad Renderer integration with IMA SDK. This assumes you have setup the Ad Renderer dependency above. The starting/key points referenced in each step can be searched in the code for reference. E.g., searching for [2] will direct you to the engagement start.
+The following steps are a guideline for the Infillion Ad Renderer integration with IMA SDK. This assumes you have set up the Ad Renderer dependency above. The starting/key points referenced in each step can be searched in the code for reference. E.g., searching for [2] will direct you to the engagement start.
 
 ### [1] - Identify Infillion ads via IMA SDK
 This sample app uses the Google IMA SDK to load ads from a VMAP playlist (`ima-vmap-playlist.xml`). The important part is determining if a given ad is an Infillion interactive ad (TrueX or IDVx). In the `kIMAAdEvent_STARTED` handler, check the `adSystem` property to identify the ad type:
